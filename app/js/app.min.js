@@ -2,7 +2,8 @@ $(document).ready(function () {
 
     let script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "/app/js/leaflet.min.js";
+    script.src = "app/js/leaflet.min.js";
+
     document.getElementsByTagName("body")[0].appendChild(script)
 
     script.onload = function() {
