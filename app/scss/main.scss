@@ -1,0 +1,808 @@
+@import "normalize";
+@import "variables";
+@import "fonts";
+@import "leaflet";
+@import "mixins";
+
+body {
+  font-family: 'Myriad Pro', sans-serif;
+  color: $dark;
+  &.mobile-menu {
+    overflow: hidden;
+    .menu {
+      display: block;
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: $white;
+  overflow: auto;
+  padding: 60px 15px;
+  text-align: center;
+  display: none;
+
+  button {
+    padding: 0;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    svg {
+      fill: $navi-light;
+    }
+  }
+
+  .phone {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .email {
+    font-size: 18px;
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0 42px;
+    svg {
+      fill: $navi-light;
+      margin-right: 11px;
+    }
+  }
+
+  .logo-excerpt {
+    max-width: 300px;
+    margin: 15px auto 45px auto;
+  }
+
+  @include respond(980px) {
+    display: none;
+  }
+}
+
+.container {
+  max-width: 1290px;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+}
+
+svg {
+  display: block;
+}
+
+.btn {
+  max-width: 230px;
+  width: 100%;
+  height: 60px;
+  border-radius: 40px;
+  color: $white;
+  display: flex;
+  letter-spacing: .7px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: 'Myriad Pro Medium', sans-serif;
+  font-size: 16px;
+  background: $navi;
+  transition: background 280ms ease;
+
+  &:hover {
+    background: $btn-hover;
+  }
+}
+
+.btn-more {
+  max-width: 220px;
+  width: 100%;
+  height: 60px;
+  border-radius: 40px;
+  color: $light-gray;
+  display: inline-flex;
+  letter-spacing: .7px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: 'Myriad Pro Medium', sans-serif;
+  font-size: 16px;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid transparentize($dark, .7);
+  svg {
+    fill: $light-gray;
+    margin-left: 14px;
+    transition: transform 280ms ease;
+  }
+  &:hover {
+    svg {
+      transform: rotate(-90deg);
+    }
+  }
+
+}
+
+.btn-small {
+  max-width: 150px;
+  width: 100%;
+  height: 50px;
+  border-radius: 40px;
+  color: $white;
+  display: flex;
+  letter-spacing: .7px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: 'Myriad Pro Medium', sans-serif;
+  font-size: 16px;
+  background: $navi;
+  transition: background 280ms ease;
+
+  &:hover {
+    background: $btn-hover;
+  }
+}
+
+.phone {
+  font-weight: bold;
+  color: $dark;
+  text-decoration: none;
+  transition: color 300ms ease;
+
+  &:hover {
+    color: $navi;
+  }
+}
+
+.email {
+  font-weight: 400;
+  color: $light-gray;
+  border-bottom: 1px solid transparentize($light-gray, .5);
+  padding-bottom: 2px;
+  text-decoration: none;
+}
+
+.product-grid {
+  display: grid;
+  grid-gap: 30px;
+  margin-bottom: 60px;
+
+  @include respond(816px) {
+    grid-template-columns: repeat(auto-fill, minmax(370px, auto));
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .product-content {
+    padding: 32px 40px 50px 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    @include respond(816px) {
+      padding: 32px 40px 50px 40px;
+    }
+    @include respond(0, 816px) {
+      padding: 22px;
+    }
+  }
+
+  .brand-title {
+    color: $light-gray;
+    font-size: 15px;
+    letter-spacing: -0.25px;
+    max-width: 215px;
+    line-height: 1.5;
+  }
+
+  .product-description {
+    font-size: 16px;
+    line-height: 1.875;
+    letter-spacing: -0.3px;
+    flex: 1;
+
+    @include respond(0, 816px) {
+      margin-bottom: 20px;
+    }
+    @include respond(816px) {
+      max-width: 305px;
+    }
+
+  }
+
+  .product-title {
+    font-size: 21px;
+    font-family: "Myriad Pro Medium", sans-serif;
+    color: $dark;
+    letter-spacing: .5px;
+    line-height: 1.667;
+    margin-bottom: 10px;
+    transition: color 250ms ease;
+  }
+
+  .available {
+    display: flex;
+    padding-top: 3px;
+    font-family: "Myriad Pro Medium", sans-serif;
+    font-size: 14px;
+    svg {
+      margin-right: 8px;
+    }
+    &.no {
+      color: $light-gray;
+      svg {
+        transform: translateY(-1px);
+        fill: $light-gray;
+      }
+    }
+    &.yes {
+      color: $dark;
+      svg {
+        transform: translateY(-2px);
+        fill: $navi-light;
+      }
+    }
+  }
+
+  .product-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+
+  .product-card {
+    border: 1px solid $card-border;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: border 250ms ease;
+
+    @include respond(816px) {
+      min-height: 683px;
+    }
+
+    &:hover {
+      border-color: $navi-light;
+      .product-title {
+        color: $navi-light;
+      }
+    }
+
+  }
+}
+
+.categories {
+  @include respond(980px) {
+    margin-bottom: 45px;
+    margin-top: 56px;
+  }
+  @include respond(0, 980px) {
+    margin-top: 35px;
+    margin-bottom: 30px;
+  }
+
+  display: grid;
+  grid-gap: 20px;
+
+
+  @include respond(1140px) {
+    grid-auto-flow: column;
+  }
+  @include respond(0, 1140px) {
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(auto, 258px));
+  }
+
+  .category-item {
+    height: 58px;
+    border: 1px solid transparentize($dark, .7);
+    border-radius: 40px;
+    display: inline-flex;
+    color: $light-gray;
+    padding: 0 15px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: border 260ms ease, color 260ms ease, background 260ms ease;
+    font-family: "Myriad Pro Medium", sans-serif;
+    letter-spacing: .8px;
+
+    &:hover {
+      border-color: $navi;
+      color: $navi;
+    }
+
+    &.active {
+      background: $navi-light;
+      border-color: $navi-light;
+      color: $white;
+    }
+  }
+}
+
+header {
+  @include respond(980px) {
+    padding: 28px 0;
+  }
+  @include respond(0, 980px) {
+    padding: 22px 0;
+  }
+  .logo-excerpt {
+    @include respond(0, 1190px) {
+      display: none;
+    }
+  }
+  .responsive-container {
+    display: grid;
+    @include respond(980px) {
+      grid-auto-flow: column;
+      grid-column: 3;
+    }
+    @include respond(0, 980px) {
+      grid-template-columns: auto max-content;
+    }
+  }
+  .location {
+    @include respond(0, 980px) {
+      display: none;
+    }
+    @include respond(980px) {
+      display: flex;
+    }
+  }
+  .contacts {
+    @include respond(980px) {
+      display: flex;
+    }
+    @include respond(0, 980px) {
+      display: none;
+    }
+  }
+}
+
+footer {
+  @include respond(980px) {
+    padding: 28px 0;
+  }
+  @include respond(0, 980px) {
+    padding: 36px 0;
+  }
+
+  .responsive-container {
+    @include respond(980px) {
+      display: grid;
+      grid-auto-flow: column;
+      grid-column: 3;
+    }
+    @include respond(0, 980px) {
+      text-align: center;
+      justify-content: center;
+      flex-direction: column;
+      display: flex;
+    }
+  }
+  .phone {
+    @include respond(0, 980px) {
+      margin-bottom: 15px;
+    }
+  }
+  .contacts {
+    display: flex;
+  }
+  .location {
+    display: flex;
+    @include respond(0, 980px) {
+      margin: 20px 0;
+    }
+  }
+  .logo-excerpt {
+    @include respond(0, 1190px) {
+      display: none;
+    }
+  }
+}
+
+header,
+footer {
+  .logo-excerpt {
+    max-width: 230px;
+    margin-left: 19px;
+    padding-left: 20px;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 1px;
+      background: transparentize($dark, .7);
+      left: 0;
+      top: 5px;
+      bottom: 3px;
+    }
+  }
+
+  .responsive-container {
+    align-items: center;
+    margin: 0 -15px;
+
+    .column {
+      padding: 0 15px;
+    }
+  }
+
+  .location {
+    align-items: center;
+    flex: 1;
+
+    svg {
+      @include respond(980px) {
+        margin-left: 12px;
+      }
+      margin-right: 8px;
+      fill: $navi-light;
+    }
+  }
+
+  .email {
+    letter-spacing: 0.7px;
+  }
+
+  .burger {
+    height: 19px;
+
+    @include respond(980px) {
+      display: none;
+    }
+  }
+
+  .phone {
+    font-size: 21px;
+    letter-spacing: -0.7px;
+    line-height: 1.524;
+  }
+
+  .contacts {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .address {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: .25px;
+  }
+
+}
+
+.logo {
+
+  @include respond(980px) {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-link {
+    display: inline-block;
+
+    svg {
+      max-width: 100%;
+    }
+  }
+}
+
+.btn-burger {
+  background: transparent;
+  outline: none;
+  border: none;
+  width: 30px;
+  padding: 0;
+  cursor: pointer;
+  appearance: none;
+
+  .burger-line {
+    background: $navi;
+    height: 3px;
+    display: block;
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+    &:nth-child(1) {
+      width: 30px;
+    }
+    &:nth-child(2) {
+      width: 22px;
+    }
+    &:nth-child(3) {
+      width: 16px;
+    }
+  }
+}
+
+.logo-excerpt {
+  position: relative;
+  color: $light-gray;
+  line-height: 1.5;
+}
+
+.contacts-inner {
+  position: relative;
+}
+
+section.slider {
+  background: $catalog-background;
+  min-height: 700px;
+}
+
+section.about {
+  padding-top: 106px;
+  .columns {
+
+    @include respond(980px) {
+      display: flex;
+    }
+
+    margin: 0 -15px;
+    .column {
+      padding: 0 15px;
+      flex: 1;
+    }
+    .last {
+      padding-top: 40px;
+    }
+  }
+  .about-bottom {
+    font-size: 20px;
+    line-height: 1.75;
+    font-family: 'Myriad Pro Medium', sans-serif;
+    @include respond(980px) {
+      max-width: 473px;
+    }
+    letter-spacing: .55px;
+  }
+  .about-text,
+  .about-text p {
+    color: $dark;
+    line-height: 1.778;
+    letter-spacing: -0.3px;
+
+    @include respond(980px) {
+      max-width: 510px;
+    }
+
+    font-size: 18px;
+    b, strong {
+      font-family: 'Myriad Pro Medium', sans-serif;
+      letter-spacing: .5px;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+section.brands {
+  padding-top: 106px;
+  padding-bottom: 113px;
+
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(206px, auto));
+    max-width: 1095px;
+    margin: 0 auto;
+    grid-column-gap: 90px;
+    grid-row-gap: 48px;
+  }
+  .brand-item {
+    text-align: center;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+section.catalog {
+  background: $catalog-background;
+
+  @include respond(980px) {
+    padding-top: 104px;
+    padding-bottom: 126px;
+  }
+  @include respond(0, 980px) {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+}
+
+section.contacts {
+  position: relative;
+
+  @include respond(980px) {
+    height: 800px;
+  }
+
+  .absolute-container {
+    @include respond(0, 980px) {
+      margin-top: 45px;
+      margin-bottom: 45px;
+    }
+    @include respond(980px) {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 500;
+  }
+
+  #map {
+    width: 100%;
+
+    @include respond(0, 980px) {
+      height: 300px;
+    }
+    @include respond(980px) {
+      height: 100%;
+    }
+
+  }
+}
+
+picture,
+picture img {
+  display: block;
+  max-width: 100%;
+}
+
+.contacts-card {
+  background: $white;
+  pointer-events: all;
+
+  @include respond(980px) {
+    padding: 53px 60px 64px 60px;
+    box-sizing: border-box;
+    border: 1px solid $card-border;
+    max-width: 550px;
+    width: 100%;
+  }
+
+  .columns {
+    display: flex;
+
+    @include respond(0, 590px) {
+      flex-direction: column;
+      margin-bottom: 40px;
+    }
+
+    .column {
+      &:first-child {
+        @include respond(590px) {
+          max-width: 257px;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .phone {
+    font-size: 23px;
+    letter-spacing: -0.2px;
+    line-height: 1.609;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  .phone-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include respond(590px) {
+      margin-bottom: 40px;
+    }
+    @include respond(0, 590px) {
+      margin-bottom: 18px;
+    }
+  }
+
+  .first {
+    margin-bottom: 35px;
+  }
+
+  .contact-item {
+    font-size: 18px;
+    letter-spacing: -0.2px;
+  }
+
+  .label {
+    font-family: 'Myriad Pro Medium', sans-serif;
+    font-size: 21px;
+    color: $navi;
+    margin-bottom: 14px;
+    letter-spacing: .5px;
+  }
+
+}
+
+.section-title {
+  font-family: 'Myriad Pro Medium', sans-serif;
+  color: $dark;
+  line-height: 1;
+  letter-spacing: 1.4px;
+  @include respond(980px) {
+    font-size: 52px;
+  }
+  @include respond(0,980px) {
+    font-size: 35px;
+  }
+}
+
+.block-title {
+  font-family: 'Myriad Pro Medium', sans-serif;
+  color: $dark;
+  margin-bottom: 25px;
+  overflow: hidden;
+  letter-spacing: 1.4px;
+  @include respond(0,980px) {
+    font-size: 35px;
+  }
+  @include respond(980px) {
+    font-size: 52px;
+    span {
+      display: inline-block;
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        left: calc(100% + 40px);
+        height: 2px;
+        width: 150px;
+        top: 32px;
+        background: $navi-light;
+      }
+    }
+  }
+
+}
