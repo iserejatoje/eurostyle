@@ -566,11 +566,16 @@ section.slider {
 }
 
 section.about {
-  padding-top: 106px;
   .columns {
+    display: flex;
 
-    @include respond(980px) {
+    @include respond(0, 980px) {
+      padding-top: 35px;
       display: flex;
+      flex-direction: column-reverse;
+    }
+    @include respond(980px) {
+      padding-top: 106px;
     }
 
     margin: 0 -15px;
@@ -578,8 +583,15 @@ section.about {
       padding: 0 15px;
       flex: 1;
     }
+    .first {
+      @include respond(0, 980px) {
+        margin-top: 30px;
+      }
+    }
     .last {
-      padding-top: 40px;
+      @include respond(980px) {
+        padding-top: 40px;
+      }
     }
   }
   .about-bottom {

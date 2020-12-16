@@ -1659,41 +1659,51 @@ section.slider {
   background: #f5f5f7;
   min-height: 30px; }
 
-section.about {
-  padding-top: 106px; }
-  section.about .columns {
-    margin: 0 -15px; }
-    @media only all and (min-width: 980px) {
-      section.about .columns {
-        display: flex; } }
-    section.about .columns .column {
-      padding: 0 15px;
-      flex: 1; }
+section.about .columns {
+  display: flex;
+  margin: 0 -15px; }
+  @media only all and (min-width: 0) and (max-width: 979px) {
+    section.about .columns {
+      padding-top: 35px;
+      display: flex;
+      flex-direction: column-reverse; } }
+  @media only all and (min-width: 980px) {
+    section.about .columns {
+      padding-top: 106px; } }
+  section.about .columns .column {
+    padding: 0 15px;
+    flex: 1; }
+  @media only all and (min-width: 0) and (max-width: 979px) {
+    section.about .columns .first {
+      margin-top: 30px; } }
+  @media only all and (min-width: 980px) {
     section.about .columns .last {
-      padding-top: 40px; }
-  section.about .about-bottom {
-    font-size: 20px;
-    line-height: 1.75;
+      padding-top: 40px; } }
+
+section.about .about-bottom {
+  font-size: 20px;
+  line-height: 1.75;
+  font-family: 'Myriad Pro Medium', sans-serif;
+  letter-spacing: .55px; }
+  @media only all and (min-width: 980px) {
+    section.about .about-bottom {
+      max-width: 473px; } }
+
+section.about .about-text,
+section.about .about-text p {
+  color: #363636;
+  line-height: 1.778;
+  letter-spacing: -0.3px;
+  font-size: 18px; }
+  @media only all and (min-width: 980px) {
+    section.about .about-text,
+    section.about .about-text p {
+      max-width: 510px; } }
+  section.about .about-text b, section.about .about-text strong,
+  section.about .about-text p b,
+  section.about .about-text p strong {
     font-family: 'Myriad Pro Medium', sans-serif;
-    letter-spacing: .55px; }
-    @media only all and (min-width: 980px) {
-      section.about .about-bottom {
-        max-width: 473px; } }
-  section.about .about-text,
-  section.about .about-text p {
-    color: #363636;
-    line-height: 1.778;
-    letter-spacing: -0.3px;
-    font-size: 18px; }
-    @media only all and (min-width: 980px) {
-      section.about .about-text,
-      section.about .about-text p {
-        max-width: 510px; } }
-    section.about .about-text b, section.about .about-text strong,
-    section.about .about-text p b,
-    section.about .about-text p strong {
-      font-family: 'Myriad Pro Medium', sans-serif;
-      letter-spacing: .5px; }
+    letter-spacing: .5px; }
 
 .text-center {
   text-align: center; }
