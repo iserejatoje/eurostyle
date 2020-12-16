@@ -15,9 +15,8 @@ $(document).ready(function () {
         }
 
         L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png').addTo(map);
-
         let pin = L.icon({
-            iconUrl: '/app/images/sprite.svg#pin',
+            iconUrl: 'app/images/sprite.svg#pin',
             iconSize: [76, 80],
             iconAnchor: [38, 80],
         });
