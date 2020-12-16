@@ -32,7 +32,7 @@ $(document).ready(function () {
             L.marker([55.342698, 86.090009], {icon: pin}).addTo(map);
         };
 
-    }, 1200);
+    }, 1300);
 
     $('.btn-burger')
         .click(function() {
