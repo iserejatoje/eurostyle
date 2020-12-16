@@ -517,6 +517,11 @@ footer {
     display: inline-block;
 
     svg {
+
+      @include respond(0, 500px) {
+        max-width: 206px;
+      }
+
       max-width: 100%;
     }
   }
@@ -570,7 +575,7 @@ section.about {
     display: flex;
 
     @include respond(0, 980px) {
-      padding-top: 35px;
+      padding-top: 25px;
       display: flex;
       flex-direction: column-reverse;
     }
@@ -602,6 +607,11 @@ section.about {
       max-width: 473px;
     }
     letter-spacing: .55px;
+  }
+  .about-text p {
+    &:first-child {
+      margin-top: 0;
+    }
   }
   .about-text,
   .about-text p {
@@ -794,14 +804,15 @@ picture img {
 .block-title {
   font-family: 'Myriad Pro Medium', sans-serif;
   color: $dark;
-  margin-bottom: 25px;
   overflow: hidden;
   letter-spacing: 1.4px;
-  @include respond(0,980px) {
+  @include respond(0, 980px) {
+    margin-bottom: 12px;
     font-size: 35px;
   }
   @include respond(980px) {
     font-size: 52px;
+    margin-bottom: 25px;
     span {
       display: inline-block;
       position: relative;

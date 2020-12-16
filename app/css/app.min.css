@@ -1625,6 +1625,9 @@ footer .address {
   display: inline-block; }
   .logo .logo-link svg {
     max-width: 100%; }
+    @media only all and (min-width: 0) and (max-width: 499px) {
+      .logo .logo-link svg {
+        max-width: 206px; } }
 
 .btn-burger {
   background: transparent;
@@ -1664,7 +1667,7 @@ section.about .columns {
   margin: 0 -15px; }
   @media only all and (min-width: 0) and (max-width: 979px) {
     section.about .columns {
-      padding-top: 35px;
+      padding-top: 25px;
       display: flex;
       flex-direction: column-reverse; } }
   @media only all and (min-width: 980px) {
@@ -1688,6 +1691,9 @@ section.about .about-bottom {
   @media only all and (min-width: 980px) {
     section.about .about-bottom {
       max-width: 473px; } }
+
+section.about .about-text p:first-child {
+  margin-top: 0; }
 
 section.about .about-text,
 section.about .about-text p {
@@ -1833,15 +1839,16 @@ picture img {
 .block-title {
   font-family: 'Myriad Pro Medium', sans-serif;
   color: #363636;
-  margin-bottom: 25px;
   overflow: hidden;
   letter-spacing: 1.4px; }
   @media only all and (min-width: 0) and (max-width: 979px) {
     .block-title {
+      margin-bottom: 12px;
       font-size: 35px; } }
   @media only all and (min-width: 980px) {
     .block-title {
-      font-size: 52px; }
+      font-size: 52px;
+      margin-bottom: 25px; }
       .block-title span {
         display: inline-block;
         position: relative; }
