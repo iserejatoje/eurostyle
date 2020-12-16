@@ -570,6 +570,29 @@ section.slider {
   min-height: 30px;
 }
 
+.navigation {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 40px;
+  justify-content: center;
+  .label {
+    color: $dark;
+    opacity: 0;
+  }
+  a {
+    &.active,
+    &:hover {
+      .label {
+        opacity: 1;
+      }
+    }
+    font-size: 14px;
+  }
+}
+
 section.about {
   .columns {
     display: flex;
