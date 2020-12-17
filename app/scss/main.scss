@@ -3,6 +3,7 @@
 @import "fonts";
 @import "leaflet";
 @import "mixins";
+@import "owl.carousel";
 
 body {
   font-family: 'Myriad Pro', sans-serif;
@@ -567,7 +568,12 @@ footer {
 
 section.slider {
   background: $catalog-background;
-  min-height: 30px;
+  min-height: 700px;
+
+  picture {
+    position: absolute;
+    right: 0;
+  }
 }
 
 .navigation {
@@ -578,13 +584,47 @@ section.slider {
   bottom: 0;
   left: 40px;
   justify-content: center;
+  align-items: flex-start;
+  z-index: 8888;
+
+  .circle {
+    border: 2px solid $navigation-circle;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    border-radius: 50%;
+    transform: translateY(-1px);
+    margin-right: 19px;
+    transition: border 150ms linear;
+  }
   .label {
-    color: $dark;
     opacity: 0;
+    transition: opacity 150ms linear;
   }
   a {
+    color: $dark;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      &:after {
+        content: '';
+        height: 17px;
+        width: 1px;
+        position: absolute;
+        left: 8px;
+        background: transparentize($dark, .85);
+        top: calc(100% + 6px);
+      }
+    }
     &.active,
     &:hover {
+      .circle {
+        border-color: $navi-light;
+      }
       .label {
         opacity: 1;
       }

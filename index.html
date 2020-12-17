@@ -22,9 +22,9 @@
 <div id="app">
 
     <div class="navigation">
-        <a href=""><span class="circle"></span><span class="label">О компании</span></a>
-        <a href=""><span class="circle"></span><span class="label">Каталог продукции</span></a>
-        <a href=""><span class="circle"></span><span class="label">Контакты</span></a>
+        <a href="#" class="active"><span class="circle"></span><span class="label">О компании</span></a>
+        <a href="#"><span class="circle"></span><span class="label">Каталог</span></a>
+        <a href="#"><span class="circle"></span><span class="label">Контакты</span></a>
     </div>
 
     <header>
@@ -69,7 +69,18 @@
     </header>
 
     <section class="slider">
-
+        <div class="container">
+            <div class="slider-block owl-carousel">
+                <div class="slider-item">
+                    <div class="title">Аппараты УЗИ</div>
+                </div>
+            </div>
+        </div>
+        <picture>
+            <source srcset="app/images/slider-blue.webp" type="image/webp">
+            <source srcset="app/images/slider-blue.png" type="image/png">
+            <img class="image" src="app/images/slider-blue.png" alt="Евростиль">
+        </picture>
     </section>
 
     <section class="about">
