@@ -641,27 +641,35 @@ section.slider {
 
   .slider-buttons {
     display: flex;
+
     @include respond(980px) {
       margin-top: 50px;
     }
     @include respond(0, 980px) {
-      flex-direction: column;
       margin-top: 18px;
-
     }
+
     .btn {
-      margin-right: 20px;
       @include respond(0, 980px) {
         height: 52px;
         margin-bottom: 12px;
-        max-width: 205px;
+        max-width: 185px;
+        flex: 1;
+        margin-right: 10px;
+        font-size: 15px;
+      }
+      @include respond(980px) {
+        margin-right: 20px;
       }
     }
     .btn-transparent {
-      padding: 0 24px;
+      @include respond(980px) {
+        padding: 0 24px;
+      }
       @include respond(0, 980px) {
         height: 50px;
-        max-width: 200px;
+        max-width: 228px;
+        font-size: 15px;
       }
     }
   }

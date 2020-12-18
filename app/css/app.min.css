@@ -2197,21 +2197,26 @@ section.slider {
         margin-top: 50px; } }
     @media only all and (min-width: 0) and (max-width: 979px) {
       section.slider .slider-buttons {
-        flex-direction: column;
         margin-top: 18px; } }
-    section.slider .slider-buttons .btn {
-      margin-right: 20px; }
-      @media only all and (min-width: 0) and (max-width: 979px) {
-        section.slider .slider-buttons .btn {
-          height: 52px;
-          margin-bottom: 12px;
-          max-width: 205px; } }
-    section.slider .slider-buttons .btn-transparent {
-      padding: 0 24px; }
-      @media only all and (min-width: 0) and (max-width: 979px) {
-        section.slider .slider-buttons .btn-transparent {
-          height: 50px;
-          max-width: 200px; } }
+    @media only all and (min-width: 0) and (max-width: 979px) {
+      section.slider .slider-buttons .btn {
+        height: 52px;
+        margin-bottom: 12px;
+        max-width: 185px;
+        flex: 1;
+        margin-right: 10px;
+        font-size: 15px; } }
+    @media only all and (min-width: 980px) {
+      section.slider .slider-buttons .btn {
+        margin-right: 20px; } }
+    @media only all and (min-width: 980px) {
+      section.slider .slider-buttons .btn-transparent {
+        padding: 0 24px; } }
+    @media only all and (min-width: 0) and (max-width: 979px) {
+      section.slider .slider-buttons .btn-transparent {
+        height: 50px;
+        max-width: 228px;
+        font-size: 15px; } }
   section.slider .title {
     font-family: "Myriad Pro Medium", sans-serif;
     line-height: 1.194;
