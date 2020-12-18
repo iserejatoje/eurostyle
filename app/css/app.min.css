@@ -1958,7 +1958,10 @@ svg {
 
 @media only all and (min-width: 0) and (max-width: 979px) {
   header {
-    padding: 22px 0; } }
+    padding: 18px 0; }
+    header .logo {
+      display: flex;
+      align-items: center; } }
 
 @media only all and (min-width: 0) and (max-width: 1189px) {
   header .logo-excerpt {
@@ -2104,7 +2107,7 @@ footer .address {
   display: inline-block; }
   .logo .logo-link svg {
     max-width: 100%; }
-    @media only all and (min-width: 0) and (max-width: 499px) {
+    @media only all and (min-width: 0) and (max-width: 979px) {
       .logo .logo-link svg {
         max-width: 206px; } }
 
@@ -2146,7 +2149,7 @@ section.slider {
       min-height: 700px; } }
   @media only all and (min-width: 0) and (max-width: 1365px) {
     section.slider {
-      padding: 30px 0; } }
+      padding: 18px 0; } }
   section.slider .blue-overlay img {
     height: 100%;
     object-fit: cover; }
@@ -2164,7 +2167,8 @@ section.slider {
       section.slider .slider-item {
         height: 700px; } }
     section.slider .slider-item .container {
-      width: 100%; }
+      width: 100%;
+      box-sizing: border-box; }
     section.slider .slider-item picture {
       position: absolute;
       bottom: -170px;
@@ -2187,25 +2191,31 @@ section.slider {
     @media only all and (min-width: 0) and (max-width: 979px) {
       section.slider .slider-buttons {
         flex-direction: column;
-        margin-top: 30px; } }
+        margin-top: 18px; } }
     section.slider .slider-buttons .btn {
       margin-right: 20px; }
       @media only all and (min-width: 0) and (max-width: 979px) {
         section.slider .slider-buttons .btn {
-          margin-bottom: 15px; } }
+          height: 52px;
+          margin-bottom: 12px;
+          max-width: 205px; } }
     section.slider .slider-buttons .btn-transparent {
       padding: 0 24px; }
+      @media only all and (min-width: 0) and (max-width: 979px) {
+        section.slider .slider-buttons .btn-transparent {
+          height: 50px;
+          max-width: 200px; } }
   section.slider .title {
     font-family: "Myriad Pro Medium", sans-serif;
     line-height: 1.194;
     letter-spacing: 1.5px;
-    margin-bottom: 15px; }
+    margin-bottom: 10px; }
     @media only all and (min-width: 980px) {
       section.slider .title {
         font-size: 62px; } }
     @media only all and (min-width: 0) and (max-width: 979px) {
       section.slider .title {
-        font-size: 43px; } }
+        font-size: 27px; } }
   section.slider .description {
     line-height: 1.667;
     max-width: 510px;
@@ -2215,7 +2225,7 @@ section.slider {
         font-size: 21px; } }
     @media only all and (min-width: 0) and (max-width: 979px) {
       section.slider .description {
-        font-size: 18px; } }
+        font-size: 16px; } }
   section.slider > picture {
     position: absolute;
     right: 0;
@@ -2298,27 +2308,35 @@ section.about .columns {
       padding-top: 40px; } }
 
 section.about .about-bottom {
-  font-size: 20px;
   line-height: 1.75;
   font-family: 'Myriad Pro Medium', sans-serif;
   letter-spacing: .55px; }
   @media only all and (min-width: 980px) {
     section.about .about-bottom {
-      max-width: 473px; } }
+      max-width: 473px;
+      font-size: 20px; } }
+  @media only all and (min-width: 0) and (max-width: 979px) {
+    section.about .about-bottom {
+      font-size: 16px; } }
 
 section.about .about-text p:first-child {
   margin-top: 0; }
 
 section.about .about-text,
 section.about .about-text p {
-  color: #363636;
-  line-height: 1.778;
-  letter-spacing: -0.3px;
-  font-size: 18px; }
+  color: #363636; }
   @media only all and (min-width: 980px) {
     section.about .about-text,
     section.about .about-text p {
-      max-width: 510px; } }
+      line-height: 1.6;
+      max-width: 510px;
+      font-size: 18px;
+      letter-spacing: -0.3px; } }
+  @media only all and (min-width: 0) and (max-width: 979px) {
+    section.about .about-text,
+    section.about .about-text p {
+      line-height: 1.778;
+      font-size: 16px; } }
   section.about .about-text b, section.about .about-text strong,
   section.about .about-text p b,
   section.about .about-text p strong {

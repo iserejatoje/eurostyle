@@ -368,7 +368,11 @@ header {
     padding: 28px 0;
   }
   @include respond(0, 980px) {
-    padding: 22px 0;
+    padding: 18px 0;
+    .logo {
+      display: flex;
+      align-items: center;
+    }
   }
   .logo-excerpt {
     @include respond(0, 1190px) {
@@ -526,13 +530,10 @@ footer {
 
   .logo-link {
     display: inline-block;
-
     svg {
-
-      @include respond(0, 500px) {
+      @include respond(0, 980px) {
         max-width: 206px;
       }
-
       max-width: 100%;
     }
   }
@@ -582,7 +583,7 @@ section.slider {
     min-height: 700px;
   }
   @include respond(0, 1366px) {
-    padding: 30px 0;
+    padding: 18px 0;
   }
   background: $catalog-background;
   position: relative;
@@ -614,6 +615,7 @@ section.slider {
 
     .container {
       width: 100%;
+      box-sizing: border-box;
     }
 
     picture {
@@ -643,16 +645,23 @@ section.slider {
     }
     @include respond(0, 980px) {
       flex-direction: column;
-      margin-top: 30px;
+      margin-top: 18px;
+
     }
     .btn {
       margin-right: 20px;
       @include respond(0, 980px) {
-        margin-bottom: 15px;
+        height: 52px;
+        margin-bottom: 12px;
+        max-width: 205px;
       }
     }
     .btn-transparent {
       padding: 0 24px;
+      @include respond(0, 980px) {
+        height: 50px;
+        max-width: 200px;
+      }
     }
   }
 
@@ -660,13 +669,12 @@ section.slider {
     font-family: "Myriad Pro Medium", sans-serif;
     line-height: 1.194;
     letter-spacing: 1.5px;
-    margin-bottom: 15px;
-
+    margin-bottom: 10px;
     @include respond(980px) {
       font-size: 62px;
     }
     @include respond(0, 980px) {
-      font-size: 43px;
+      font-size: 27px;
     }
   }
 
@@ -675,7 +683,7 @@ section.slider {
       font-size: 21px;
     }
     @include respond(0, 980px) {
-      font-size: 18px;
+      font-size: 16px;
     }
     line-height: 1.667;
     max-width: 510px;
@@ -788,11 +796,14 @@ section.about {
     }
   }
   .about-bottom {
-    font-size: 20px;
     line-height: 1.75;
     font-family: 'Myriad Pro Medium', sans-serif;
     @include respond(980px) {
       max-width: 473px;
+      font-size: 20px;
+    }
+    @include respond(0, 980px) {
+      font-size: 16px;
     }
     letter-spacing: .55px;
   }
@@ -804,14 +815,16 @@ section.about {
   .about-text,
   .about-text p {
     color: $dark;
-    line-height: 1.778;
-    letter-spacing: -0.3px;
-
     @include respond(980px) {
+      line-height: 1.6;
       max-width: 510px;
+      font-size: 18px;
+      letter-spacing: -0.3px;
     }
-
-    font-size: 18px;
+    @include respond(0, 980px) {
+      line-height: 1.778;
+      font-size: 16px;
+    }
     b, strong {
       font-family: 'Myriad Pro Medium', sans-serif;
       letter-spacing: .5px;
