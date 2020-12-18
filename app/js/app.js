@@ -66,28 +66,5 @@ $(document).ready(function () {
             $('body').removeClass('mobile-menu');
         })
 
-    let swiper = new Swiper('.slider-block', {
-        speed: 400,
-        watchSlidesVisibility: false,
-        slidesPerView: 1,
-        virtualTranslate: true,
-        on: {
-            transitionStart: function() {
-                $('.navigation .navigation-item').eq(swiper.activeIndex).addClass('active').siblings().removeClass('active');
-            },
-            init: function () {
-                $('.navigation .navigation-item:nth-child(1)').addClass('active');
-            },
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-        },
-        fadeEffect: {
-            crossFade: true
-        },
-        effect: "fade",
-    });
-
     console.log("%cCreated with ❤", "color: #000; padding: 5px 0px 1px; border-bottom:2px solid #87b0dd;");
 });
