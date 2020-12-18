@@ -1370,8 +1370,13 @@ svg.leaflet-image-layer.leaflet-interactive path {
   position: absolute;
   transition: .3s opacity;
   transform: translate3d(0, 0, 0);
-  z-index: 10;
-  bottom: 81px; }
+  z-index: 10; }
+  @media only all and (min-width: 1366px) {
+    .swiper-pagination {
+      bottom: 81px; } }
+  @media only all and (min-width: 0) and (max-width: 1365px) {
+    .swiper-pagination {
+      bottom: 25px; } }
 
 .swiper-pagination.swiper-pagination-hidden {
   opacity: 0; }
@@ -1740,9 +1745,11 @@ body {
   padding: 0 15px;
   margin-left: auto;
   margin-right: auto; }
-  @media only all and (min-width: 0) and (max-width: 1365px) {
-    .container.responsive {
-      max-width: 900px; } }
+  .container.responsive {
+    box-sizing: border-box; }
+    @media only all and (min-width: 0) and (max-width: 1365px) {
+      .container.responsive {
+        max-width: 900px; } }
 
 .skip-link {
   position: absolute;
@@ -2149,7 +2156,7 @@ section.slider {
       min-height: 700px; } }
   @media only all and (min-width: 0) and (max-width: 1365px) {
     section.slider {
-      padding: 18px 0; } }
+      padding: 18px 0 70px 0; } }
   section.slider .blue-overlay img {
     height: 100%;
     object-fit: cover; }

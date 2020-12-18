@@ -91,6 +91,7 @@ body {
   margin-right: auto;
 
   &.responsive {
+    box-sizing: border-box;
     @include respond(0, 1366px) {
       max-width: 900px;
     }
@@ -583,7 +584,7 @@ section.slider {
     min-height: 700px;
   }
   @include respond(0, 1366px) {
-    padding: 18px 0;
+    padding: 18px 0 70px 0;
   }
   background: $catalog-background;
   position: relative;
