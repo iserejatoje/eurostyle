@@ -2311,7 +2311,7 @@ section.about .columns {
     section.about .columns {
       padding-top: 18px;
       display: flex;
-      flex-direction: column-reverse; } }
+      flex-direction: column; } }
   @media only all and (min-width: 980px) {
     section.about .columns {
       padding-top: 106px; } }

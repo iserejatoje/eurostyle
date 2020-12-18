@@ -790,7 +790,7 @@ section.about {
     @include respond(0, 980px) {
       padding-top: 18px;
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
     @include respond(980px) {
       padding-top: 106px;
