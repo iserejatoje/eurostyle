@@ -583,8 +583,11 @@ section.slider {
   @include respond(1366px) {
     min-height: 700px;
   }
-  @include respond(0, 1366px) {
+  @include respond(980px, 1366px) {
     padding: 18px 0 70px 0;
+  }
+  @include respond(0, 980px) {
+    padding: 18px 0 58px 0;
   }
   background: $catalog-background;
   position: relative;

@@ -2154,9 +2154,12 @@ section.slider {
   @media only all and (min-width: 1366px) {
     section.slider {
       min-height: 700px; } }
-  @media only all and (min-width: 0) and (max-width: 1365px) {
+  @media only all and (min-width: 980px) and (max-width: 1365px) {
     section.slider {
       padding: 18px 0 70px 0; } }
+  @media only all and (min-width: 0) and (max-width: 979px) {
+    section.slider {
+      padding: 18px 0 58px 0; } }
   section.slider .blue-overlay img {
     height: 100%;
     object-fit: cover; }
