@@ -2205,7 +2205,7 @@ section.slider {
         max-width: 185px;
         flex: 1;
         margin-right: 10px;
-        font-size: 15px; } }
+        font-size: 14px; } }
     @media only all and (min-width: 980px) {
       section.slider .slider-buttons .btn {
         margin-right: 20px; } }
@@ -2215,8 +2215,8 @@ section.slider {
     @media only all and (min-width: 0) and (max-width: 979px) {
       section.slider .slider-buttons .btn-transparent {
         height: 50px;
-        max-width: 228px;
-        font-size: 15px; } }
+        max-width: 203px;
+        font-size: 14px; } }
   section.slider .title {
     font-family: "Myriad Pro Medium", sans-serif;
     line-height: 1.194;
