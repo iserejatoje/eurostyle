@@ -574,6 +574,10 @@ footer {
   line-height: 1.5;
 }
 
+a, button, input {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
 .contacts-inner {
   position: relative;
 }

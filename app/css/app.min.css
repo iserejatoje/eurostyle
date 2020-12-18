@@ -2144,6 +2144,9 @@ footer .address {
   color: #9da1a7;
   line-height: 1.5; }
 
+a, button, input {
+  -webkit-tap-highlight-color: transparent !important; }
+
 .contacts-inner {
   position: relative; }
 
