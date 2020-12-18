@@ -2215,7 +2215,7 @@ section.slider {
     @media only all and (min-width: 0) and (max-width: 979px) {
       section.slider .slider-buttons .btn-transparent {
         height: 50px;
-        max-width: 203px;
+        max-width: 192px;
         font-size: 14px; } }
   section.slider .title {
     font-family: "Myriad Pro Medium", sans-serif;
