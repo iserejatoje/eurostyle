@@ -69,52 +69,24 @@
     </header>
 
     <section class="slider">
-        <div class="container">
+        <div class="slider-inner">
 
             <div class="swiper-container slider-block">
                 <div class="swiper-wrapper">
 
                     <div class="swiper-slide slider-item">
-                        <picture>
-                            <source srcset="app/images/slider-image1.webp" type="image/webp">
-                            <source srcset="app/images/slider-image1.png" type="image/jpg">
-                            <img class="image" src="app/images/slider-image1.png" alt="Аппараты УЗИ">
-                        </picture>
-                        <div class="title">Аппараты УЗИ</div>
-                        <div class="description">Поставка и техническое обслуживание аппаратов УЗИ от официального дилера</div>
-                        <div class="slider-buttons">
-                            <a href="" class="btn">Перейти в каталог</a>
-                            <a href="" class="btn-transparent">Получить консультацию</a>
-                        </div>
-                    </div>
-
-
-                    <div class="swiper-slide slider-item">
-                        <picture>
-                            <source srcset="app/images/slider-image1.webp" type="image/webp">
-                            <source srcset="app/images/slider-image1.png" type="image/jpg">
-                            <img class="image" src="app/images/slider-image1.png" alt="Аппараты УЗИ">
-                        </picture>
-                        <div class="title">Аппараты УЗИ</div>
-                        <div class="description">Поставка и техническое обслуживание аппаратов УЗИ от официального дилера</div>
-                        <div class="slider-buttons">
-                            <a href="" class="btn">Перейти в каталог</a>
-                            <a href="" class="btn-transparent">Получить консультацию</a>
-                        </div>
-                    </div>
-
-
-                    <div class="swiper-slide slider-item">
-                        <picture>
-                            <source srcset="app/images/slider-image1.webp" type="image/webp">
-                            <source srcset="app/images/slider-image1.png" type="image/jpg">
-                            <img class="image" src="app/images/slider-image1.png" alt="Аппараты УЗИ">
-                        </picture>
-                        <div class="title">Аппараты УЗИ</div>
-                        <div class="description">Поставка и техническое обслуживание аппаратов УЗИ от официального дилера</div>
-                        <div class="slider-buttons">
-                            <a href="" class="btn">Перейти в каталог</a>
-                            <a href="" class="btn-transparent">Получить консультацию</a>
+                        <div class="container responsive">
+                            <picture>
+                                <source srcset="app/images/slider-image1.webp" type="image/webp">
+                                <source srcset="app/images/slider-image1.png" type="image/jpg">
+                                <img class="image" src="app/images/slider-image1.png" alt="Аппараты УЗИ">
+                            </picture>
+                            <div class="title">Аппараты УЗИ</div>
+                            <div class="description">Поставка и техническое обслуживание аппаратов УЗИ от официального дилера</div>
+                            <div class="slider-buttons">
+                                <a href="" class="btn">Перейти в каталог</a>
+                                <a href="" class="btn-transparent">Получить консультацию</a>
+                            </div>
                         </div>
                     </div>
 
@@ -125,7 +97,7 @@
             <div class="swiper-pagination"></div>
 
         </div>
-        <picture>
+        <picture class="blue-overlay">
             <source srcset="app/images/slider-blue.webp" type="image/webp">
             <source srcset="app/images/slider-blue.png" type="image/png">
             <img class="image" src="app/images/slider-blue.png" alt="Евростиль">
@@ -415,7 +387,9 @@
 </div>
 
 <div class="menu">
-    <button><svg width="20" height="20"><use xlink:href="app/images/sprite.svg#close"></use></svg></button>
+    <button>
+        <svg width="18" height="18"><use xlink:href="app/images/sprite.svg#close"></use></svg>
+    </button>
     <div class="logo column">
         <a href="/" class="logo-link" aria-label="Перейти на главную">
             <svg width="291" height="30">
