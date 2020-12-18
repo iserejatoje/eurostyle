@@ -2291,7 +2291,7 @@ section.about .columns {
   margin: 0 -15px; }
   @media only all and (min-width: 0) and (max-width: 979px) {
     section.about .columns {
-      padding-top: 25px;
+      padding-top: 18px;
       display: flex;
       flex-direction: column-reverse; } }
   @media only all and (min-width: 980px) {

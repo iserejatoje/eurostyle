@@ -769,17 +769,16 @@ section.slider {
 section.about {
   .columns {
     display: flex;
+    margin: 0 -15px;
 
     @include respond(0, 980px) {
-      padding-top: 25px;
+      padding-top: 18px;
       display: flex;
       flex-direction: column-reverse;
     }
     @include respond(980px) {
       padding-top: 106px;
     }
-
-    margin: 0 -15px;
     .column {
       padding: 0 15px;
       flex: 1;
