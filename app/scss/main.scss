@@ -651,7 +651,7 @@ section.slider {
 
     .btn {
       @include respond(0, 980px) {
-        height: 52px;
+        height: 46px;
         margin-bottom: 12px;
         max-width: 185px;
         flex: 1;
@@ -667,7 +667,7 @@ section.slider {
         padding: 0 24px;
       }
       @include respond(0, 980px) {
-        height: 50px;
+        height: 44px;
         max-width: 192px;
         font-size: 14px;
       }

@@ -2200,7 +2200,7 @@ section.slider {
         margin-top: 18px; } }
     @media only all and (min-width: 0) and (max-width: 979px) {
       section.slider .slider-buttons .btn {
-        height: 52px;
+        height: 46px;
         margin-bottom: 12px;
         max-width: 185px;
         flex: 1;
@@ -2214,7 +2214,7 @@ section.slider {
         padding: 0 24px; } }
     @media only all and (min-width: 0) and (max-width: 979px) {
       section.slider .slider-buttons .btn-transparent {
-        height: 50px;
+        height: 44px;
         max-width: 192px;
         font-size: 14px; } }
   section.slider .title {
