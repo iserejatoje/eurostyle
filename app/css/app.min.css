@@ -1376,7 +1376,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
       bottom: 81px; } }
   @media only all and (min-width: 0) and (max-width: 1365px) {
     .swiper-pagination {
-      bottom: 25px; } }
+      bottom: 20px; } }
 
 .swiper-pagination.swiper-pagination-hidden {
   opacity: 0; }
@@ -1769,6 +1769,9 @@ svg {
   height: 60px;
   border-radius: 40px;
   color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
   display: flex;
   letter-spacing: .7px;
   align-items: center;
@@ -1780,6 +1783,48 @@ svg {
   transition: background 280ms ease; }
   .btn:hover {
     background: #294a6f; }
+
+.checkbox {
+  color: #9da1a7;
+  font-size: 13px;
+  position: relative;
+  padding-left: 43px;
+  cursor: pointer;
+  padding-right: 20px; }
+  .checkbox a {
+    color: #9da1a7; }
+  .checkbox span {
+    position: absolute;
+    left: 0;
+    top: -6px;
+    width: 23px;
+    height: 23px;
+    border: 1px solid #363636; }
+  .checkbox input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    left: 7px;
+    top: 9px; }
+  .checkbox input:checked + span {
+    background: url(../images/sprite.svg#check) no-repeat 3px center/15px 15px; }
+
+.form-controls {
+  margin-top: 33px;
+  display: flex; }
+  @media only all and (min-width: 0) and (max-width: 499px) {
+    .form-controls {
+      flex-direction: column; } }
+  .form-controls .policy {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.25px; }
+    @media only all and (min-width: 0) and (max-width: 499px) {
+      .form-controls .policy {
+        margin-bottom: 34px; } }
+  .form-controls .btn {
+    max-width: 174px; }
 
 .btn-transparent {
   max-width: 220px;
@@ -2150,6 +2195,124 @@ a, button, input {
 .contacts-inner {
   position: relative; }
 
+body.opened {
+  overflow: hidden; }
+  body.opened .overlay {
+    display: flex; }
+
+.input {
+  position: relative; }
+  .input.active span {
+    transform: translateY(-27px);
+    color: #9da1a7;
+    font-size: 13px; }
+  .input span {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    font-size: 18px;
+    letter-spacing: -0.4px;
+    pointer-events: none;
+    transition: transform 230ms ease, color 230ms ease, font-size 230ms ease; }
+  .input input {
+    border: none;
+    outline: none;
+    background: transparent;
+    transition: border 260ms ease;
+    font-size: 18px;
+    width: 100%;
+    height: 31px;
+    letter-spacing: -0.4px; }
+    .input input:not(:focus) {
+      border-bottom: 1px solid #b1b2b8; }
+    .input input:focus {
+      border-bottom: 1px solid #87b0dd; }
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  padding-top: 27px; }
+  .breadcrumbs span {
+    color: #9da1a7;
+    letter-spacing: .1px; }
+  .breadcrumbs a {
+    color: #363636;
+    text-decoration: none; }
+  .breadcrumbs a,
+  .breadcrumbs span {
+    font-size: 15px; }
+  .breadcrumbs svg {
+    margin: 0 18px;
+    display: block;
+    transform: scale(-1, -1); }
+
+.overlay {
+  position: fixed;
+  background: rgba(54, 54, 54, 0.5);
+  z-index: 9999;
+  display: none;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto; }
+  .overlay .popup {
+    max-width: 725px;
+    position: relative;
+    margin: auto;
+    background: #fff;
+    box-sizing: border-box;
+    min-height: 590px;
+    width: 100%;
+    padding: 64px 15px; }
+    .overlay .popup .inner {
+      max-width: 610px;
+      margin: 0 auto; }
+      .overlay .popup .inner form {
+        margin-top: 50px; }
+    .overlay .popup .columns {
+      display: flex;
+      margin: 47px 0; }
+      @media only all and (min-width: 0) and (max-width: 499px) {
+        .overlay .popup .columns {
+          flex-direction: column; } }
+      .overlay .popup .columns .column {
+        flex: 1; }
+        @media only all and (min-width: 0) and (max-width: 499px) {
+          .overlay .popup .columns .column:first-child {
+            margin-bottom: 47px; } }
+        @media only all and (min-width: 500px) {
+          .overlay .popup .columns .column:first-child {
+            margin-right: 30px; } }
+    .overlay .popup .title {
+      letter-spacing: 1px;
+      font-size: 42px;
+      text-align: center;
+      font-family: "Myriad Pro Medium", sans-serif;
+      margin-bottom: 21px; }
+    .overlay .popup .description {
+      text-align: center;
+      font-size: 18px;
+      letter-spacing: -0.3px;
+      line-height: 1.4; }
+    .overlay .popup .close-button {
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: #f5f5f7;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .overlay .popup .close-button svg {
+        fill: #9da1a7; }
+
 section.slider {
   background: #f5f5f7;
   position: relative;
@@ -2162,7 +2325,7 @@ section.slider {
       padding: 18px 0 70px 0; } }
   @media only all and (min-width: 0) and (max-width: 979px) {
     section.slider {
-      padding: 18px 0 58px 0; } }
+      padding: 28px 0 58px 0; } }
   section.slider .blue-overlay img {
     height: 100%;
     object-fit: cover; }
@@ -2203,15 +2366,18 @@ section.slider {
         margin-top: 50px; } }
     @media only all and (min-width: 0) and (max-width: 979px) {
       section.slider .slider-buttons {
-        margin-top: 18px; } }
+        margin-top: 18px;
+        flex-direction: column;
+        align-items: flex-start; } }
     @media only all and (min-width: 0) and (max-width: 979px) {
       section.slider .slider-buttons .btn {
-        height: 46px;
-        margin-bottom: 12px;
-        max-width: 185px;
-        flex: 1;
+        height: 29px;
+        margin-bottom: 8px;
+        width: auto;
+        max-width: none;
         margin-right: 10px;
-        font-size: 14px; } }
+        font-size: 14px;
+        padding: 0 14px; } }
     @media only all and (min-width: 980px) {
       section.slider .slider-buttons .btn {
         margin-right: 20px; } }
@@ -2220,9 +2386,11 @@ section.slider {
         padding: 0 24px; } }
     @media only all and (min-width: 0) and (max-width: 979px) {
       section.slider .slider-buttons .btn-transparent {
-        height: 44px;
-        max-width: 192px;
-        font-size: 14px; } }
+        height: 27px;
+        max-width: none;
+        width: auto;
+        font-size: 14px;
+        padding: 0 14px; } }
   section.slider .title {
     font-family: "Myriad Pro Medium", sans-serif;
     line-height: 1.194;

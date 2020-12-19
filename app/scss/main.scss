@@ -118,6 +118,9 @@ svg {
   height: 60px;
   border-radius: 40px;
   color: $white;
+  border: none;
+  outline: none;
+  cursor: pointer;
   display: flex;
   letter-spacing: .7px;
   align-items: center;
@@ -130,6 +133,57 @@ svg {
 
   &:hover {
     background: $btn-hover;
+  }
+}
+
+.checkbox {
+  color: $light-gray;
+  font-size: 13px;
+  position: relative;
+  padding-left: 43px;
+  cursor: pointer;
+  padding-right: 20px;
+
+  a {
+    color: $light-gray;
+  }
+  span {
+    position: absolute;
+    left: 0;
+    top: -6px;
+    width: 23px;
+    height: 23px;
+    border: 1px solid $dark;
+  }
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    left: 7px;
+    top: 9px;
+  }
+  input:checked + span {
+    background: url(../images/sprite.svg#check) no-repeat 3px center / 15px 15px;
+  }
+}
+
+.form-controls {
+  margin-top: 33px;
+  display: flex;
+  @include respond(0, 500px) {
+    flex-direction: column;
+  }
+  .policy {
+    @include respond(0, 500px) {
+      margin-bottom: 34px;
+    }
+    flex: 1;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.25px;
+  }
+  .btn {
+    max-width: 174px;
   }
 }
 
@@ -582,6 +636,166 @@ a, button, input {
   position: relative;
 }
 
+body.opened {
+  overflow: hidden;
+  .overlay {
+    display: flex;
+  }
+}
+
+.input {
+  position: relative;
+  &.active {
+    span {
+      transform: translateY(-27px);
+      color: $light-gray;
+      font-size: 13px;
+    }
+  }
+  span {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    font-size: 18px;
+    letter-spacing: -0.4px;
+    pointer-events: none;
+    transition: transform 230ms ease, color 230ms ease, font-size 230ms ease;
+  }
+  input {
+    border: none;
+    outline: none;
+    background: transparent;
+    transition: border 260ms ease;
+    font-size: 18px;
+    width: 100%;
+    height: 31px;
+    letter-spacing: -0.4px;
+
+    &:not(:focus) {
+      border-bottom: 1px solid $input-border;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $navi-light;
+    }
+  }
+}
+
+section.detail {
+
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  padding-top: 27px;
+  span {
+    color: $light-gray;
+    letter-spacing: .1px;
+  }
+  a {
+    color: $dark;
+    text-decoration: none;
+  }
+  a,
+  span {
+    font-size: 15px;
+  }
+  svg {
+    margin: 0 18px;
+    display: block;
+    transform: scale(-1, -1);
+  }
+}
+
+.overlay {
+  position: fixed;
+  background: transparentize($dark, .5);
+  z-index: 9999;
+  display: none;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+
+  .popup {
+    max-width: 725px;
+    position: relative;
+    margin: auto;
+    background: $white;
+    box-sizing: border-box;
+    min-height: 590px;
+    width: 100%;
+    padding: 64px 15px;
+
+    .inner {
+      max-width: 610px;
+      margin: 0 auto;
+      form {
+        margin-top: 50px;
+      }
+    }
+
+    .columns {
+      display: flex;
+      @include respond(0, 500px) {
+        flex-direction: column;
+      }
+
+      margin: 47px 0;
+
+      .column {
+        &:first-child {
+          @include respond(0, 500px) {
+            margin-bottom: 47px;
+          }
+          @include respond(500px) {
+            margin-right: 30px;
+          }
+        }
+        flex: 1;
+      }
+    }
+
+    .title {
+      letter-spacing: 1px;
+      font-size: 42px;
+      text-align: center;
+      font-family: "Myriad Pro Medium", sans-serif;
+      margin-bottom: 21px;
+    }
+
+    .description {
+      text-align: center;
+      font-size: 18px;
+      letter-spacing: -0.3px;
+      line-height: 1.4;
+    }
+
+    .close-button {
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: $catalog-background;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        fill: $light-gray;
+      }
+    }
+  }
+}
+
 section.slider {
 
   @include respond(1366px) {
@@ -591,7 +805,7 @@ section.slider {
     padding: 18px 0 70px 0;
   }
   @include respond(0, 980px) {
-    padding: 18px 0 58px 0;
+    padding: 28px 0 58px 0;
   }
   background: $catalog-background;
   position: relative;
@@ -654,16 +868,19 @@ section.slider {
     }
     @include respond(0, 980px) {
       margin-top: 18px;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .btn {
       @include respond(0, 980px) {
-        height: 46px;
-        margin-bottom: 12px;
-        max-width: 185px;
-        flex: 1;
+        height: 29px;
+        margin-bottom: 8px;
+        width: auto;
+        max-width: none;
         margin-right: 10px;
         font-size: 14px;
+        padding: 0 14px;
       }
       @include respond(980px) {
         margin-right: 20px;
@@ -674,9 +891,11 @@ section.slider {
         padding: 0 24px;
       }
       @include respond(0, 980px) {
-        height: 44px;
-        max-width: 192px;
+        height: 27px;
+        max-width: none;
+        width: auto;
         font-size: 14px;
+        padding: 0 14px;
       }
     }
   }

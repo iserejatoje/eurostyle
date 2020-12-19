@@ -86,7 +86,7 @@
                             <div class="description">Поставка и техническое обслуживание аппаратов УЗИ от официального дилера</div>
                             <div class="slider-buttons">
                                 <a href="" class="btn">Перейти в каталог</a>
-                                <a href="" class="btn-transparent">Получить консультацию</a>
+                                <a href="" class="btn-transparent" data-open="consultation">Получить консультацию</a>
                             </div>
                         </div>
                     </div> <div class="swiper-slide slider-item">
@@ -100,7 +100,7 @@
                             <div class="description">Поставка и техническое обслуживание аппаратов УЗИ от официального дилера</div>
                             <div class="slider-buttons">
                                 <a href="" class="btn">Перейти в каталог</a>
-                                <a href="" class="btn-transparent">Получить консультацию</a>
+                                <a href="" class="btn-transparent" data-open="consultation">Получить консультацию</a>
                             </div>
                         </div>
                     </div> <div class="swiper-slide slider-item">
@@ -114,7 +114,7 @@
                             <div class="description">Поставка и техническое обслуживание аппаратов УЗИ от официального дилера</div>
                             <div class="slider-buttons">
                                 <a href="" class="btn">Перейти в каталог</a>
-                                <a href="" class="btn-transparent">Получить консультацию</a>
+                                <a href="" class="btn-transparent" data-open="consultation">Получить консультацию</a>
                             </div>
                         </div>
                     </div>
@@ -147,14 +147,9 @@
                 </div>
                 <div class="column last">
                     <div class="block-title"><span>О компании</span></div>
-
                     <div class="about-text">
-                        <p>
-                            Основными видами деятельности компании <b>ООО&nbsp;«ЕвроСтиль ХХI»</b> являются оптовая торговля  медицинской техникой, оборудованием и инструментами, а&nbsp;также их техническое обслуживание и ремонт.
-                        </p>
-                        <p>
-                            За 20 лет работы <b>ООО «ЕвроСтиль ХХI»</b> зарекомендовала себя в качестве надежного поставщика оборудования, применяемого в медицинских целях.
-                        </p>
+                        <p>Основными видами деятельности компании <b>ООО&nbsp;«ЕвроСтиль ХХI»</b> являются оптовая торговля  медицинской техникой, оборудованием и инструментами, а&nbsp;также их техническое обслуживание и ремонт.</p>
+                        <p>За 20 лет работы <b>ООО «ЕвроСтиль ХХI»</b> зарекомендовала себя в качестве надежного поставщика оборудования, применяемого в медицинских целях.</p>
                     </div>
                     <div class="about-bottom">
                         Мы обеспечиваем медицинские учреждения по  всей России оборудованием известных мировых производителей
@@ -417,6 +412,66 @@
     </footer>
 </div>
 
+<div class="overlay">
+    <div class="popup">
+        <button class="close-button">
+            <svg width="18" height="18"><use xlink:href="app/images/sprite.svg#close"></use></svg>
+        </button>
+
+        <div class="inner">
+
+            <div class="title">Получить консультацию</div>
+            <div class="description">Оставьте заявку, наш менеджер свяжеться с Вами в ближайшее время</div>
+
+            <form action="" autocomplete="off" method="post">
+                <input type="hidden" name="form_type" value="consultation">
+
+                <div class="row">
+                    <div class="input">
+                        <input id="firstname" required name="firstname" type="text" >
+                        <span>Ваше имя</span>
+                    </div>
+                </div>
+
+                <div class="row columns">
+                    <div class="column">
+                        <div class="input">
+                            <input id="phone" minlength="18" required name="phone" type="tel" >
+                            <span>Ваш номер телефона</span>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="input">
+                            <input id="email" required name="email" type="email" >
+                            <span>Ваш e-mail</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input">
+                        <input id="message" required name="message" type="text" >
+                        <span>Сообщение</span>
+                    </div>
+                </div>
+
+                <div class="form-controls">
+                    <div class="policy">
+                        <label class="checkbox">
+                            <input checked type="checkbox" required>
+                            <span></span>
+                            Согласен с условиями обработки <a href="#">персональных данных</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn">Отправить</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
 <div class="menu">
     <button>
         <svg width="18" height="18"><use xlink:href="app/images/sprite.svg#close"></use></svg>
@@ -437,8 +492,8 @@
             <use xlink:href="app/images/sprite.svg#placeholder"></use>
         </svg>
         <span class="address">
-                        г. Кемерово, ул. Мичурина, д. 56, офис 1
-                    </span>
+            г. Кемерово, ул. Мичурина, д. 56, офис 1
+        </span>
     </div>
 
     <div class="contacts column">
