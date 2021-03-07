@@ -194,20 +194,6 @@
   display: none
 }
 
-.swiper-pagination {
-  position: absolute;
-  transition: .3s opacity;
-  transform: translate3d(0, 0, 0);
-  z-index: 10;
-
-  @include respond(1366px) {
-    bottom: 81px;
-  }
-  @include respond(0, 1366px) {
-    bottom: 20px;
-  }
-}
-
 .swiper-pagination.swiper-pagination-hidden {
   opacity: 0
 }
@@ -250,7 +236,7 @@
 
 .swiper-container {
   width: 100%;
-  height: 100%;
+  //height: 100%;
 }
 
 .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next {

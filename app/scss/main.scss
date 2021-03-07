@@ -193,7 +193,7 @@ svg {
   height: 58px;
   border-radius: 40px;
   color: $light-gray;
-  background: $catalog-background;
+  background: transparent;
   display: inline-flex;
   letter-spacing: .7px;
   align-items: center;
@@ -207,12 +207,6 @@ svg {
   svg {
     fill: $light-gray;
     margin-left: 14px;
-    transition: transform 280ms ease;
-  }
-  &:hover {
-    svg {
-      transform: rotate(-90deg);
-    }
   }
 
 }
@@ -257,6 +251,102 @@ svg {
   text-decoration: none;
 }
 
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+
+  &.small {
+    font-size: 14px;
+  }
+
+  .available {
+    display: flex;
+    //padding-top: 3px;
+    font-family: "Myriad Pro Medium", sans-serif;
+    svg {
+      margin-right: 8px;
+    }
+    &.no {
+      color: $light-gray;
+      svg {
+        fill: $light-gray;
+      }
+    }
+    &.yes {
+      color: $dark;
+      svg {
+        fill: $navi-light;
+      }
+    }
+  }
+
+  .brand-title {
+    color: $light-gray;
+  }
+
+}
+
+.product-content {
+  padding: 32px 40px 50px 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  @include respond(816px) {
+    padding: 32px 40px 50px 40px;
+  }
+  @include respond(0, 816px) {
+    padding: 22px;
+  }
+}
+
+.product-description {
+  font-size: 16px;
+  line-height: 1.875;
+  letter-spacing: -0.3px;
+  flex: 1;
+
+  @include respond(0, 816px) {
+    margin-bottom: 20px;
+  }
+  @include respond(816px) {
+    max-width: 305px;
+  }
+
+}
+
+.product-title {
+  font-size: 21px;
+  font-family: "Myriad Pro Medium", sans-serif;
+  color: $dark;
+  letter-spacing: .5px;
+  line-height: 1.667;
+  margin-bottom: 10px;
+  transition: color 250ms ease;
+}
+
+.product-card {
+  border: 1px solid $card-border;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: border 250ms ease;
+
+  @include respond(816px) {
+    min-height: 683px;
+  }
+
+  &:hover {
+    border-color: $navi-light;
+    .product-title {
+      color: $navi-light;
+    }
+  }
+
+}
+
 .product-grid {
   display: grid;
   grid-gap: 30px;
@@ -270,102 +360,27 @@ svg {
     object-fit: cover;
   }
 
-  .product-content {
-    padding: 32px 40px 50px 40px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-
-    @include respond(816px) {
-      padding: 32px 40px 50px 40px;
-    }
-    @include respond(0, 816px) {
-      padding: 22px;
-    }
-  }
-
   .brand-title {
-    color: $light-gray;
     font-size: 15px;
     letter-spacing: -0.25px;
-    max-width: 215px;
     line-height: 1.5;
   }
 
-  .product-description {
-    font-size: 16px;
-    line-height: 1.875;
-    letter-spacing: -0.3px;
-    flex: 1;
-
-    @include respond(0, 816px) {
-      margin-bottom: 20px;
-    }
-    @include respond(816px) {
-      max-width: 305px;
-    }
-
-  }
-
-  .product-title {
-    font-size: 21px;
-    font-family: "Myriad Pro Medium", sans-serif;
-    color: $dark;
-    letter-spacing: .5px;
-    line-height: 1.667;
-    margin-bottom: 10px;
-    transition: color 250ms ease;
-  }
-
   .available {
-    display: flex;
-    padding-top: 3px;
-    font-family: "Myriad Pro Medium", sans-serif;
     font-size: 14px;
-    svg {
-      margin-right: 8px;
-    }
     &.no {
-      color: $light-gray;
       svg {
         transform: translateY(-1px);
-        fill: $light-gray;
       }
     }
     &.yes {
-      color: $dark;
       svg {
-        transform: translateY(-2px);
-        fill: $navi-light;
+        transform: translateY(-1px);
       }
     }
   }
 
-  .product-top {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 4px;
-  }
 
-  .product-card {
-    border: 1px solid $card-border;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    transition: border 250ms ease;
-
-    @include respond(816px) {
-      min-height: 683px;
-    }
-
-    &:hover {
-      border-color: $navi-light;
-      .product-title {
-        color: $navi-light;
-      }
-    }
-
-  }
 }
 
 .categories {
@@ -463,6 +478,9 @@ header {
 }
 
 footer {
+  &.separator {
+    border-top: 1px solid $footer-border;
+  }
   @include respond(980px) {
     padding: 28px 0;
   }
@@ -681,31 +699,297 @@ body.opened {
   }
 }
 
-section.detail {
+.small-container {
+  max-width: 1070px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
 
+section.info {
+  background: $catalog-background;
+  @include respond(850px) {
+    padding: 66px 0;
+  }
+  @include respond(0, 850px) {
+    padding: 32px 0;
+  }
+  .tabs {
+    display: flex;
+
+    @include respond(820px) {
+      justify-content: space-between;
+    }
+    @include respond(0, 820px) {
+      margin-bottom: 16px;
+      flex-direction: column;
+      align-items: center;
+    }
+    a {
+      font-family: "Myriad Pro Medium", sans-serif;
+      font-size: 21px;
+      letter-spacing: .5px;
+      text-decoration: none;
+      color: $dark;
+      position: relative;
+
+      @include respond(0, 820px) {
+        margin-bottom: 13px;
+        padding-bottom: 2px
+      }
+      @include respond(820px) {
+        padding-bottom: 20px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 2px;
+        opacity: 0;
+        transition: opacity 300ms ease;
+      }
+      &.active,
+      &:hover {
+        &:before {
+          opacity: 1;
+          background: $navi-light;
+        }
+      }
+    }
+  }
+  .info-top {
+    @include respond(820px) {
+      border-bottom: 1px solid $card-border;
+    }
+  }
+}
+
+section.similar {
+  @include respond(980px) {
+    padding: 102px 0 130px 0;
+  }
+  @include respond(0, 980px) {
+    padding: 40px 0 60px 0;
+  }
+  .brand-title {
+    font-size: 15px;
+  }
+
+  .product-image img {
+    width: 100%;
+    @include respond(800px) {
+      height: 270px;
+    }
+    object-fit: cover;
+  }
+
+  .available {
+    font-size: 14px;
+    &.no {
+      color: $light-gray;
+      svg {
+        fill: $light-gray;
+      }
+    }
+    svg {
+      transform: translateY(-2px);
+    }
+  }
+  .section-title {
+    @include respond(980px) {
+      margin-bottom: 55px;
+    }
+    @include respond(0, 980px) {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+section.detail {
+  .product-thumbnails {
+    margin-top: 16px;
+    display: flex;
+    @include respond(850px) {
+      margin-bottom: 168px;
+    }
+    @include respond(0, 850px) {
+      margin-bottom: 40px;
+    }
+    .thumbnail {
+      background: $catalog-background;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        box-sizing: border-box;
+        border: 1px solid $card-border;
+      }
+      &:last-child {
+        margin-right: 0 !important;
+      }
+    }
+  }
+  .product-columns {
+    display: flex;
+    @include respond(0, 980px) {
+      margin-top: 30px;
+    }
+    @include respond(980px) {
+      margin-top: 70px;
+    }
+    @include respond(0, 850px) {
+      flex-direction: column;
+    }
+    .column {
+      &:first-child {
+        width: 100%;
+        @include respond(1230px) {
+          max-width: 550px;
+          margin-right: 110px;
+        }
+        @include respond(935px, 1230px) {
+          max-width: 390px;
+          margin-right: 50px;
+        }
+        @include respond(850px, 935px) {
+          max-width: 330px;
+          margin-right: 30px;
+        }
+      }
+      &:last-child {
+        flex: 1;
+      }
+    }
+  }
+  .product-image {
+    @include respond(850px) {
+      border: 1px solid $card-border;
+    }
+  }
+  .brand-title {
+    letter-spacing: -0.25px;
+    line-height: 1.5;
+  }
+  .product-buttons {
+    display: flex;
+    margin-top: 45px;
+    @include respond(850px) {
+      margin-bottom: 130px;
+    }
+    @include respond(0, 850px) {
+      margin-bottom: 45px;
+    }
+    @include respond(0, 575px) {
+      flex-direction: column;
+    }
+    .btn {
+      max-width: 250px;
+      margin-right: 20px;
+    }
+    .btn-transparent {
+      max-width: 255px;
+      @include respond(0, 575px) {
+        margin-top: 15px;
+      }
+    }
+  }
+  .product-options {
+    margin-top: 20px;
+    font-size: 18px;
+    .row {
+      letter-spacing: -0.3px;
+      &:not(:last-child) {
+        margin-bottom: 22px;
+      }
+    }
+    b,
+    strong {
+      font-family: "Myriad Pro Medium", sans-serif;
+      letter-spacing: .5px;
+      margin-right: 7px;
+    }
+  }
+  .product-detail__text {
+    font-size: 18px;
+    line-height: 1.778;
+    letter-spacing: -0.3px;
+    margin-top: 32px;
+
+    @include respond(850px) {
+      max-width: 600px;
+    }
+
+    b,
+    strong {
+      font-weight: 600;
+      font-family: "Myriad Pro Medium", sans-serif;
+      letter-spacing: .45px;
+    }
+  }
+  .product-meta {
+    margin-top: 26px;
+
+    @include respond(0, 850px) {
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
+      .available {
+        margin-top: 8px;
+      }
+    }
+    @include respond(850px) {
+      max-width: 572px;
+    }
+  }
+  .available {
+    letter-spacing: .5px;
+    &.no {
+      svg {
+        transform: translateY(-1px);
+      }
+    }
+    &.yes {
+      svg {
+        transform: translateY(-1px);
+      }
+    }
+  }
+  h1 {
+    line-height: 1.269;
+    margin: 0;
+    transform: translateY(6px);
+  }
 }
 
 .breadcrumbs {
-  display: flex;
-  align-items: center;
   font-size: 15px;
   padding-top: 27px;
   span {
     color: $light-gray;
+    display: inline-block;
     letter-spacing: .1px;
   }
   a {
     color: $dark;
     text-decoration: none;
+    display: inline-block;
   }
   a,
   span {
     font-size: 15px;
   }
   svg {
-    margin: 0 18px;
+    @include respond(850px) {
+      margin: 0 20px;
+    }
+    @include respond(0, 850px) {
+      margin: 0 7px;
+    }
     display: block;
-    transform: scale(-1, -1);
+    transform: scale(-1, -1) translateY(-2px);
   }
 }
 
@@ -796,7 +1080,26 @@ section.detail {
   }
 }
 
+.similar-pagination {
+  margin-top: 45px;
+  text-align: center;
+}
+
 section.slider {
+
+  .swiper-pagination {
+    position: absolute;
+    transition: .3s opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+
+    @include respond(1366px) {
+      bottom: 81px;
+    }
+    @include respond(0, 1366px) {
+      bottom: 20px;
+    }
+  }
 
   @include respond(1366px) {
     min-height: 700px;
@@ -805,7 +1108,7 @@ section.slider {
     padding: 18px 0 70px 0;
   }
   @include respond(0, 980px) {
-    padding: 28px 0 58px 0;
+    padding: 38px 0 78px 0;
   }
   background: $catalog-background;
   position: relative;
@@ -840,18 +1143,19 @@ section.slider {
       box-sizing: border-box;
     }
 
+    .responsive > img,
     picture {
       position: absolute;
-      bottom: -170px;
+      bottom: -2px;
       pointer-events: none;
       z-index: 0;
+      max-height: 683px;
 
       @include respond(0, 1366px) {
         display: none;
       }
-
       @include respond(1700px) {
-        right: 420px;
+        right: 412px;
       }
       @include respond(0, 1700px) {
         right: 200px;
@@ -866,6 +1170,7 @@ section.slider {
     @include respond(980px) {
       margin-top: 50px;
     }
+
     @include respond(0, 980px) {
       margin-top: 18px;
       flex-direction: column;
@@ -873,15 +1178,6 @@ section.slider {
     }
 
     .btn {
-      @include respond(0, 980px) {
-        height: 29px;
-        margin-bottom: 8px;
-        width: auto;
-        max-width: none;
-        margin-right: 10px;
-        font-size: 14px;
-        padding: 0 14px;
-      }
       @include respond(980px) {
         margin-right: 20px;
       }
@@ -891,11 +1187,8 @@ section.slider {
         padding: 0 24px;
       }
       @include respond(0, 980px) {
-        height: 27px;
-        max-width: none;
-        width: auto;
-        font-size: 14px;
-        padding: 0 14px;
+        max-width: 230px;
+        margin-top: 10px;
       }
     }
   }
@@ -909,7 +1202,7 @@ section.slider {
       font-size: 62px;
     }
     @include respond(0, 980px) {
-      font-size: 27px;
+      font-size: 45px;
     }
   }
 
@@ -939,6 +1232,7 @@ section.slider {
 }
 
 .navigation {
+  pointer-events: none;
   @include respond(1658px){
     display: flex;
     flex-direction: column;
@@ -966,6 +1260,7 @@ section.slider {
     }
     a {
       color: $dark;
+      pointer-events: all;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
@@ -1262,5 +1557,174 @@ picture img {
       }
     }
   }
+}
 
+.photo-grid {
+  margin-top: 30px;
+  display: grid;
+
+  @include respond(740px) {
+    grid-gap: 60px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 72px;
+  }
+
+  @include respond(0, 740px) {
+    grid-gap: 25px;
+    grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 35px;
+  }
+
+
+  .title {
+    font-size: 16px;
+    color: $light-gray;
+    margin-top: 9px;
+    line-height: 1.875;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.btn-expand {
+  max-width: 360px;
+  margin-top: 30px;
+}
+
+.tab-content {
+  padding-top: 64px;
+
+  .option-table {
+    background: $white;
+    margin-top: 36px;
+
+    @include respond(980px) {
+      padding: 50px 60px;
+    }
+    @include respond(0, 980px) {
+      padding: 30px;
+    }
+
+    .row {
+      width: 100%;
+      display: flex;
+      @include respond(0, 980px) {
+        flex-direction: column;
+      }
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+    .column {
+      flex: 1;
+      &:first-child {
+        font-family: "Myriad Pro Medium", sans-serif;
+        font-size: 18px;
+      }
+      &:last-child {
+        font-size: 17px;
+        @include respond(980px) {
+          padding-left: 36px;
+        }
+
+        box-sizing: border-box;
+        line-height: 1.765;
+        letter-spacing: -0.25px;
+        span {
+          max-width: 380px;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .text {
+    a {
+      text-decoration: none;
+      display: inline-block;
+      border-bottom: 1px solid;
+      color: $navi-light;
+      line-height: 1;
+    }
+    b {
+      font-family: "Myriad Pro Medium", sans-serif;
+      letter-spacing: .45px;
+      font-size: 18px;
+    }
+    h2,
+    h3 {
+      font-family: "Myriad Pro Medium", sans-serif;
+      font-size: 21px;
+      margin-bottom: 14px;
+    }
+  }
+
+  ul,
+  li {
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+    padding-left: 34px;
+    line-height: 1.778;
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+    &:before {
+      left: 0;
+      top: 9px;
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border: 2px solid $navi-light;
+      border-radius: 50%;
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0 0 26px;
+  }
+
+  .text p {
+    margin-top: 0;
+    letter-spacing: -0.3px;
+  }
+
+  .text,
+  .text p {
+    font-size: 18px;
+    line-height: 1.778;
+  }
+}
+
+.medium-title {
+  font-family: 'Myriad Pro Medium', sans-serif;
+  overflow: hidden;
+  letter-spacing: .5px;
+  @include respond(0, 980px) {
+    margin-bottom: 12px;
+    font-size: 35px;
+  }
+  @include respond(980px) {
+    font-size: 42px;
+    margin-bottom: 25px;
+    span {
+      display: inline-block;
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        left: calc(100% + 40px);
+        height: 2px;
+        width: 150px;
+        top: 27px;
+        background: $navi-light;
+      }
+    }
+  }
 }
