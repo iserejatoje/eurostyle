@@ -4,10 +4,11 @@ let preprocessor = 'scss',
     online = true;
 
 let paths = {
-
     scripts: {
         src: [
-            // 'node_modules/jquery/dist/jquery.min.js',
+            baseDir + '/js/jquery.min.js',
+            baseDir + '/js/swiper-bundle.min.js',
+            baseDir + '/js/masked.min.js',
             baseDir + '/js/app.js'
         ],
         dest: baseDir + '/js',
@@ -56,7 +57,7 @@ function svgs() {
 function scripts() {
     return src(paths.scripts.src)
         .pipe(concat(paths.jsOutputName))
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(dest(paths.scripts.dest))
         .pipe(browserSync.stream())
 }
@@ -73,6 +74,7 @@ function styles() {
 }
 
 function startwatch() {
+    watch('*.html', {usePolling: true}).on("change", browserSync.reload);
     watch(baseDir + '/' + preprocessor + '/**/*', {usePolling: true}, styles);
     watch(baseDir + '/**/*.{' + fileswatch + '}', {usePolling: true}).on('change', browserSync.reload);
     watch([baseDir + '/js/**/*.js', '!' + paths.scripts.dest + '/*.min.js'], {usePolling: true}, scripts);

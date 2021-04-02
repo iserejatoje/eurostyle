@@ -8,8 +8,10 @@
 body {
   font-family: 'Myriad Pro', sans-serif;
   color: $dark;
+
   &.mobile-menu {
     overflow: hidden;
+
     .menu {
       display: block;
     }
@@ -43,6 +45,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
     svg {
       fill: $light-gray;
     }
@@ -68,6 +71,7 @@ body {
     align-items: center;
     justify-content: center;
     margin: 15px 0 42px;
+
     svg {
       fill: $navi-light;
       margin-right: 11px;
@@ -129,10 +133,11 @@ svg {
   font-family: 'Myriad Pro Medium', sans-serif;
   font-size: 16px;
   background: $navi;
-  transition: background 280ms ease;
+  transition: background 280ms ease, box-shadow 280ms ease;
 
   &:hover {
     background: $btn-hover;
+    box-shadow: 0 4px 32px 4px rgba(41, 74, 111, .22);
   }
 }
 
@@ -147,6 +152,7 @@ svg {
   a {
     color: $light-gray;
   }
+
   span {
     position: absolute;
     left: 0;
@@ -155,6 +161,7 @@ svg {
     height: 23px;
     border: 1px solid $dark;
   }
+
   input {
     position: absolute;
     z-index: -1;
@@ -162,6 +169,7 @@ svg {
     left: 7px;
     top: 9px;
   }
+
   input:checked + span {
     background: url(../images/sprite.svg#check) no-repeat 3px center / 15px 15px;
   }
@@ -173,6 +181,7 @@ svg {
   @include respond(0, 500px) {
     flex-direction: column;
   }
+
   .policy {
     @include respond(0, 500px) {
       margin-bottom: 34px;
@@ -182,6 +191,7 @@ svg {
     align-items: center;
     letter-spacing: -0.25px;
   }
+
   .btn {
     max-width: 174px;
   }
@@ -204,6 +214,7 @@ svg {
   outline: none;
   cursor: pointer;
   border: 1px solid transparentize($dark, .7);
+
   svg {
     fill: $light-gray;
     margin-left: 14px;
@@ -265,17 +276,22 @@ svg {
     display: flex;
     //padding-top: 3px;
     font-family: "Myriad Pro Medium", sans-serif;
+
     svg {
       margin-right: 8px;
     }
+
     &.no {
       color: $light-gray;
+
       svg {
         fill: $light-gray;
       }
     }
+
     &.yes {
       color: $dark;
+
       svg {
         fill: $navi-light;
       }
@@ -340,6 +356,7 @@ svg {
 
   &:hover {
     border-color: $navi-light;
+
     .product-title {
       color: $navi-light;
     }
@@ -355,6 +372,7 @@ svg {
   @include respond(816px) {
     grid-template-columns: repeat(auto-fill, minmax(370px, auto));
   }
+
   img {
     width: 100%;
     object-fit: cover;
@@ -368,11 +386,13 @@ svg {
 
   .available {
     font-size: 14px;
+
     &.no {
       svg {
         transform: translateY(-1px);
       }
     }
+
     &.yes {
       svg {
         transform: translateY(-1px);
@@ -434,44 +454,48 @@ svg {
 }
 
 header {
-  @include respond(980px) {
+  @include respond($mobile-breakpoint) {
     padding: 28px 0;
   }
-  @include respond(0, 980px) {
-    padding: 18px 0;
+  @include respond(0, $mobile-breakpoint) {
+    padding: 22px 0;
     .logo {
       display: flex;
       align-items: center;
     }
   }
+
   .logo-excerpt {
-    @include respond(0, 1190px) {
+    @include respond(0, 1245px) {
       display: none;
     }
   }
+
   .responsive-container {
     display: grid;
-    @include respond(980px) {
+    @include respond($mobile-breakpoint) {
       grid-auto-flow: column;
       grid-column: 3;
     }
-    @include respond(0, 980px) {
+    @include respond(0, $mobile-breakpoint) {
       grid-template-columns: auto max-content;
     }
   }
+
   .location {
-    @include respond(0, 980px) {
+    @include respond(0, $mobile-breakpoint) {
       display: none;
     }
-    @include respond(980px) {
+    @include respond($mobile-breakpoint) {
       display: flex;
     }
   }
+
   .contacts {
-    @include respond(980px) {
+    @include respond($mobile-breakpoint) {
       display: flex;
     }
-    @include respond(0, 980px) {
+    @include respond(0, $mobile-breakpoint) {
       display: none;
     }
   }
@@ -481,40 +505,45 @@ footer {
   &.separator {
     border-top: 1px solid $footer-border;
   }
-  @include respond(980px) {
+
+  @include respond($mobile-breakpoint) {
     padding: 28px 0;
   }
-  @include respond(0, 980px) {
+  @include respond(0, $mobile-breakpoint) {
     padding: 36px 0;
   }
 
   .responsive-container {
-    @include respond(980px) {
+    @include respond($mobile-breakpoint) {
       display: grid;
       grid-auto-flow: column;
       grid-column: 3;
     }
-    @include respond(0, 980px) {
+    @include respond(0, $mobile-breakpoint) {
       text-align: center;
       justify-content: center;
       flex-direction: column;
       display: flex;
     }
   }
+
   .phone {
-    @include respond(0, 980px) {
+    @include respond(0, $mobile-breakpoint) {
       margin-bottom: 15px;
     }
   }
+
   .contacts {
     display: flex;
   }
+
   .location {
     display: flex;
-    @include respond(0, 980px) {
+    @include respond(0, $mobile-breakpoint) {
       margin: 20px 0;
     }
   }
+
   .logo-excerpt {
     @include respond(0, 1190px) {
       display: none;
@@ -528,6 +557,7 @@ footer {
     max-width: 230px;
     margin-left: 19px;
     padding-left: 20px;
+
     &:before {
       content: '';
       position: absolute;
@@ -553,24 +583,29 @@ footer {
     flex: 1;
 
     svg {
-      @include respond(980px) {
-        margin-left: 12px;
-      }
       margin-right: 8px;
       fill: $navi-light;
+      @include respond(0, $mobile-breakpoint) {
+        display: none;
+      }
+      @include respond($mobile-breakpoint) {
+        margin-left: 12px;
+      }
     }
   }
 
   .email {
     letter-spacing: 0.7px;
+    transition: color 300ms ease, border-bottom-color 300ms ease;
+
+    &:hover {
+      color: $navi;
+      border-bottom-color: transparentize($navi, .5);
+    }
   }
 
   .burger {
     height: 19px;
-
-    @include respond(980px) {
-      display: none;
-    }
   }
 
   .phone {
@@ -596,18 +631,19 @@ footer {
 
 .logo {
 
-  @include respond(980px) {
+  @include respond($mobile-breakpoint) {
     display: flex;
     align-items: center;
   }
 
   .logo-link {
     display: inline-block;
+
     svg {
-      @include respond(0, 980px) {
+      @include respond(0, $mobile-breakpoint) {
+        width: 100%;
         max-width: 206px;
       }
-      max-width: 100%;
     }
   }
 }
@@ -616,26 +652,33 @@ footer {
   background: transparent;
   outline: none;
   border: none;
-  width: 30px;
+  width: 32px;
+  height: 20px;
   padding: 0;
   cursor: pointer;
   appearance: none;
+  display: flex;
+  flex-direction: column;
 
   .burger-line {
     background: $navi;
-    height: 3px;
+    height: 2px;
     display: block;
+
     &:not(:last-child) {
       margin-bottom: 5px;
     }
+
     &:nth-child(1) {
-      width: 30px;
+      width: 32px;
     }
+
     &:nth-child(2) {
-      width: 22px;
+      width: 32px;
     }
+
     &:nth-child(3) {
-      width: 16px;
+      width: 20px;
     }
   }
 }
@@ -656,6 +699,7 @@ a, button, input {
 
 body.opened {
   overflow: hidden;
+
   .overlay {
     display: flex;
   }
@@ -663,6 +707,7 @@ body.opened {
 
 .input {
   position: relative;
+
   &.active {
     span {
       transform: translateY(-27px);
@@ -670,6 +715,7 @@ body.opened {
       font-size: 13px;
     }
   }
+
   span {
     position: absolute;
     left: 0;
@@ -679,6 +725,7 @@ body.opened {
     pointer-events: none;
     transition: transform 230ms ease, color 230ms ease, font-size 230ms ease;
   }
+
   input {
     border: none;
     outline: none;
@@ -713,6 +760,7 @@ section.info {
   @include respond(0, 850px) {
     padding: 32px 0;
   }
+
   .tabs {
     display: flex;
 
@@ -724,6 +772,7 @@ section.info {
       flex-direction: column;
       align-items: center;
     }
+
     a {
       font-family: "Myriad Pro Medium", sans-serif;
       font-size: 21px;
@@ -750,6 +799,7 @@ section.info {
         opacity: 0;
         transition: opacity 300ms ease;
       }
+
       &.active,
       &:hover {
         &:before {
@@ -759,6 +809,7 @@ section.info {
       }
     }
   }
+
   .info-top {
     @include respond(820px) {
       border-bottom: 1px solid $card-border;
@@ -773,6 +824,7 @@ section.similar {
   @include respond(0, 980px) {
     padding: 40px 0 60px 0;
   }
+
   .brand-title {
     font-size: 15px;
   }
@@ -787,16 +839,20 @@ section.similar {
 
   .available {
     font-size: 14px;
+
     &.no {
       color: $light-gray;
+
       svg {
         fill: $light-gray;
       }
     }
+
     svg {
       transform: translateY(-2px);
     }
   }
+
   .section-title {
     @include respond(980px) {
       margin-bottom: 55px;
@@ -817,8 +873,10 @@ section.detail {
     @include respond(0, 850px) {
       margin-bottom: 40px;
     }
+
     .thumbnail {
       background: $catalog-background;
+
       img {
         width: 100%;
         height: 100%;
@@ -827,11 +885,13 @@ section.detail {
         box-sizing: border-box;
         border: 1px solid $card-border;
       }
+
       &:last-child {
         margin-right: 0 !important;
       }
     }
   }
+
   .product-columns {
     display: flex;
     @include respond(0, 980px) {
@@ -843,6 +903,7 @@ section.detail {
     @include respond(0, 850px) {
       flex-direction: column;
     }
+
     .column {
       &:first-child {
         width: 100%;
@@ -859,20 +920,24 @@ section.detail {
           margin-right: 30px;
         }
       }
+
       &:last-child {
         flex: 1;
       }
     }
   }
+
   .product-image {
     @include respond(850px) {
       border: 1px solid $card-border;
     }
   }
+
   .brand-title {
     letter-spacing: -0.25px;
     line-height: 1.5;
   }
+
   .product-buttons {
     display: flex;
     margin-top: 45px;
@@ -885,10 +950,12 @@ section.detail {
     @include respond(0, 575px) {
       flex-direction: column;
     }
+
     .btn {
       max-width: 250px;
       margin-right: 20px;
     }
+
     .btn-transparent {
       max-width: 255px;
       @include respond(0, 575px) {
@@ -896,15 +963,19 @@ section.detail {
       }
     }
   }
+
   .product-options {
     margin-top: 20px;
     font-size: 18px;
+
     .row {
       letter-spacing: -0.3px;
+
       &:not(:last-child) {
         margin-bottom: 22px;
       }
     }
+
     b,
     strong {
       font-family: "Myriad Pro Medium", sans-serif;
@@ -912,6 +983,7 @@ section.detail {
       margin-right: 7px;
     }
   }
+
   .product-detail__text {
     font-size: 18px;
     line-height: 1.778;
@@ -929,6 +1001,7 @@ section.detail {
       letter-spacing: .45px;
     }
   }
+
   .product-meta {
     margin-top: 26px;
 
@@ -944,19 +1017,23 @@ section.detail {
       max-width: 572px;
     }
   }
+
   .available {
     letter-spacing: .5px;
+
     &.no {
       svg {
         transform: translateY(-1px);
       }
     }
+
     &.yes {
       svg {
         transform: translateY(-1px);
       }
     }
   }
+
   h1 {
     line-height: 1.269;
     margin: 0;
@@ -964,28 +1041,53 @@ section.detail {
   }
 }
 
+h1 {
+  @include respond($mobile-breakpoint) {
+    font-size: 62px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    font-size: 40px;
+  }
+  line-height: 1.194;
+  font-weight: 600;
+  margin: 0;
+  transform: translateX(-4px);
+  letter-spacing: -1px;
+}
+
 .breadcrumbs {
   font-size: 15px;
-  padding-top: 27px;
+  padding-bottom: 18px;
+
+  @include respond($mobile-breakpoint) {
+    padding-top: 52px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding-top: 16px;
+  }
+
   span {
     color: $light-gray;
     display: inline-block;
     letter-spacing: .1px;
   }
+
   a {
     color: $dark;
     text-decoration: none;
     display: inline-block;
   }
+
   a,
   span {
     font-size: 15px;
   }
+
   svg {
-    @include respond(850px) {
-      margin: 0 20px;
+    @include respond($mobile-breakpoint) {
+      margin: 0 18px;
     }
-    @include respond(0, 850px) {
+    @include respond(0, $mobile-breakpoint) {
       margin: 0 7px;
     }
     display: block;
@@ -1017,6 +1119,7 @@ section.detail {
     .inner {
       max-width: 610px;
       margin: 0 auto;
+
       form {
         margin-top: 50px;
       }
@@ -1039,6 +1142,7 @@ section.detail {
             margin-right: 30px;
           }
         }
+
         flex: 1;
       }
     }
@@ -1182,6 +1286,7 @@ section.slider {
         margin-right: 20px;
       }
     }
+
     .btn-transparent {
       @include respond(980px) {
         padding: 0 24px;
@@ -1233,7 +1338,7 @@ section.slider {
 
 .navigation {
   pointer-events: none;
-  @include respond(1658px){
+  @include respond(1658px) {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -1265,6 +1370,7 @@ section.slider {
       display: inline-flex;
       align-items: center;
       position: relative;
+
       &:not(:last-child) {
         margin-bottom: 30px;
 
@@ -1278,20 +1384,23 @@ section.slider {
           top: calc(100% + 6px);
         }
       }
+
       &.active,
       &:hover {
         .circle {
           border-color: $navi-light;
         }
+
         .label {
           opacity: 1;
         }
       }
+
       font-size: 14px;
     }
 
   }
-  @include respond(0, 1658px){
+  @include respond(0, 1658px) {
     display: none;
   }
 }
@@ -1309,21 +1418,25 @@ section.about {
     @include respond(980px) {
       padding-top: 106px;
     }
+
     .column {
       padding: 0 15px;
       flex: 1;
     }
+
     .first {
       @include respond(0, 980px) {
         margin-top: 30px;
       }
     }
+
     .last {
       @include respond(980px) {
         padding-top: 40px;
       }
     }
   }
+
   .about-bottom {
     line-height: 1.75;
     font-family: 'Myriad Pro Medium', sans-serif;
@@ -1336,11 +1449,13 @@ section.about {
     }
     letter-spacing: .55px;
   }
+
   .about-text p {
     &:first-child {
       margin-top: 0;
     }
   }
+
   .about-text,
   .about-text p {
     color: $dark;
@@ -1354,6 +1469,7 @@ section.about {
       line-height: 1.778;
       font-size: 16px;
     }
+
     b, strong {
       font-family: 'Myriad Pro Medium', sans-serif;
       letter-spacing: .5px;
@@ -1377,6 +1493,7 @@ section.brands {
     grid-column-gap: 90px;
     grid-row-gap: 48px;
   }
+
   .brand-item {
     text-align: center;
 
@@ -1403,40 +1520,34 @@ section.catalog {
 section.contacts {
   position: relative;
 
-  @include respond(980px) {
+  @include respond($mobile-breakpoint) {
     height: 800px;
+    margin-top: 78px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    margin-top: 32px;
   }
 
   .absolute-container {
-    @include respond(0, 980px) {
-      margin-top: 45px;
-      margin-bottom: 45px;
-    }
-    @include respond(980px) {
+    @include respond($mobile-breakpoint) {
       position: absolute;
       left: 0;
       right: 0;
       top: 0;
       bottom: 0;
-      pointer-events: none;
     }
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 500;
   }
 
   #map {
-    width: 100%;
+    margin-left: auto;
 
-    @include respond(0, 980px) {
+    @include respond(0, $mobile-breakpoint) {
       height: 300px;
     }
-    @include respond(980px) {
+    @include respond($mobile-breakpoint) {
       height: 100%;
+      width: 50%;
     }
-
   }
 }
 
@@ -1447,72 +1558,66 @@ picture img {
 }
 
 .contacts-card {
-  background: $white;
   pointer-events: all;
+  padding-top: 85px;
 
-  @include respond(980px) {
-    padding: 53px 60px 64px 60px;
-    box-sizing: border-box;
-    border: 1px solid $card-border;
-    max-width: 550px;
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0;
+  }
+  @include respond($mobile-breakpoint) {
+    max-width: 50%;
     width: 100%;
   }
 
-  .columns {
-    display: flex;
-
-    @include respond(0, 590px) {
-      flex-direction: column;
-      margin-bottom: 40px;
-    }
-
-    .column {
-      &:first-child {
-        @include respond(590px) {
-          max-width: 257px;
-          width: 100%;
-        }
-      }
-    }
-  }
-
   .phone {
-    font-size: 23px;
-    letter-spacing: -0.2px;
-    line-height: 1.609;
-
-    &:not(:last-child) {
-      margin-bottom: 5px;
+    @include respond($mobile-breakpoint) {
+      font-size: 36px;
     }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 24px;
+    }
+    letter-spacing: -0.2px;
+    line-height: 1.5;
   }
 
   .phone-list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    @include respond(590px) {
-      margin-bottom: 40px;
-    }
-    @include respond(0, 590px) {
-      margin-bottom: 18px;
-    }
+    margin-bottom: 40px;
   }
 
   .first {
     margin-bottom: 35px;
   }
 
+  .email {
+    color: $email-color;
+    transition: color 250ms ease, border-bottom-color 250ms ease;
+    border-bottom-color: transparentize(#111417, .5);
+
+    &:hover {
+      color: $navi;
+      border-bottom-color: transparentize($navi, .5);
+    }
+  }
+
   .contact-item {
-    font-size: 18px;
-    letter-spacing: -0.2px;
+    @include respond($mobile-breakpoint) {
+      font-size: 20px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 18px;
+    }
+    line-height: 1.75;
+    letter-spacing: -0.15px;
   }
 
   .label {
     font-family: 'Myriad Pro Medium', sans-serif;
     font-size: 21px;
     color: $navi;
-    margin-bottom: 14px;
+    margin-bottom: 5px;
     letter-spacing: .5px;
   }
 
@@ -1526,7 +1631,7 @@ picture img {
   @include respond(980px) {
     font-size: 52px;
   }
-  @include respond(0,980px) {
+  @include respond(0, 980px) {
     font-size: 35px;
   }
 }
@@ -1536,22 +1641,30 @@ picture img {
   color: $dark;
   overflow: hidden;
   letter-spacing: 1.4px;
-  @include respond(0, 980px) {
-    margin-bottom: 12px;
+  @include respond(0, $mobile-breakpoint) {
+    margin-bottom: 25px;
     font-size: 35px;
   }
-  @include respond(980px) {
+  @include respond($mobile-breakpoint) {
     font-size: 52px;
     margin-bottom: 25px;
     span {
       display: inline-block;
       position: relative;
+
       &:after {
         content: '';
         position: absolute;
-        left: calc(100% + 40px);
         height: 2px;
-        width: 150px;
+
+        @include respond(1190px) {
+          left: calc(100% + 40px);
+          width: 150px;
+        }
+        @include respond(0, 1190px) {
+          left: calc(100% + 25px);
+          width: 74px;
+        }
         top: 32px;
         background: $navi-light;
       }
@@ -1582,6 +1695,7 @@ picture img {
     margin-top: 9px;
     line-height: 1.875;
   }
+
   img {
     width: 100%;
     object-fit: cover;
@@ -1613,16 +1727,20 @@ picture img {
       @include respond(0, 980px) {
         flex-direction: column;
       }
+
       &:not(:last-child) {
         margin-bottom: 30px;
       }
     }
+
     .column {
       flex: 1;
+
       &:first-child {
         font-family: "Myriad Pro Medium", sans-serif;
         font-size: 18px;
       }
+
       &:last-child {
         font-size: 17px;
         @include respond(980px) {
@@ -1632,6 +1750,7 @@ picture img {
         box-sizing: border-box;
         line-height: 1.765;
         letter-spacing: -0.25px;
+
         span {
           max-width: 380px;
           display: block;
@@ -1648,11 +1767,13 @@ picture img {
       color: $navi-light;
       line-height: 1;
     }
+
     b {
       font-family: "Myriad Pro Medium", sans-serif;
       letter-spacing: .45px;
       font-size: 18px;
     }
+
     h2,
     h3 {
       font-family: "Myriad Pro Medium", sans-serif;
@@ -1670,9 +1791,11 @@ picture img {
     position: relative;
     padding-left: 34px;
     line-height: 1.778;
+
     &:not(:last-child) {
       margin-bottom: 8px;
     }
+
     &:before {
       left: 0;
       top: 9px;
@@ -1716,6 +1839,7 @@ picture img {
     span {
       display: inline-block;
       position: relative;
+
       &:after {
         content: '';
         position: absolute;
@@ -1726,5 +1850,18 @@ picture img {
         background: $navi-light;
       }
     }
+  }
+}
+
+.asphalt {
+  background: #fbfbfb;
+}
+
+.contacts-grid {
+  @include respond($mobile-breakpoint) {
+    margin-bottom: 50px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    margin-bottom: 40px;
   }
 }
