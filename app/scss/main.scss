@@ -83,7 +83,7 @@ body {
     margin: 15px 0 42px;
 
     svg {
-      fill: $navi-light;
+      fill: $navy-light;
       margin-right: 11px;
     }
   }
@@ -142,7 +142,7 @@ svg {
   text-decoration: none;
   font-family: 'Myriad Pro Medium', sans-serif;
   font-size: 16px;
-  background: $navi;
+  background: $navy;
   transition: background 280ms ease, box-shadow 280ms ease;
 
   &:hover {
@@ -245,7 +245,7 @@ svg {
   text-decoration: none;
   font-family: 'Myriad Pro Medium', sans-serif;
   font-size: 16px;
-  background: $navi;
+  background: $navy;
   transition: background 280ms ease;
 
   &:hover {
@@ -260,7 +260,7 @@ svg {
   transition: color 300ms ease;
 
   &:hover {
-    color: $navi;
+    color: $navy;
   }
 }
 
@@ -303,7 +303,7 @@ svg {
       color: $dark;
 
       svg {
-        fill: $navi-light;
+        fill: $navy-light;
       }
     }
   }
@@ -365,10 +365,10 @@ svg {
   }
 
   &:hover {
-    border-color: $navi-light;
+    border-color: $navy-light;
 
     .product-title {
-      color: $navi-light;
+      color: $navy-light;
     }
   }
 
@@ -448,13 +448,13 @@ svg {
     letter-spacing: .8px;
 
     &:hover {
-      border-color: $navi;
-      color: $navi;
+      border-color: $navy;
+      color: $navy;
     }
 
     &.active {
-      background: $navi-light;
-      border-color: $navi-light;
+      background: $navy-light;
+      border-color: $navy-light;
       color: $white;
     }
   }
@@ -594,7 +594,7 @@ footer {
 
     svg {
       margin-right: 8px;
-      fill: $navi-light;
+      fill: $navy-light;
       @include respond(0, $mobile-breakpoint) {
         display: none;
       }
@@ -609,8 +609,8 @@ footer {
     transition: color 300ms ease, border-bottom-color 300ms ease;
 
     &:hover {
-      color: $navi;
-      border-bottom-color: transparentize($navi, .5);
+      color: $navy;
+      border-bottom-color: transparentize($navy, .5);
     }
   }
 
@@ -683,7 +683,7 @@ footer {
   }
 
   .burger-line {
-    background: $navi;
+    background: $navy;
     height: 2px;
     display: block;
     transition: width 300ms ease;
@@ -764,7 +764,7 @@ body.opened {
     }
 
     &:focus {
-      border-bottom: 1px solid $navi-light;
+      border-bottom: 1px solid $navy-light;
     }
   }
 }
@@ -827,7 +827,7 @@ section.info {
       &:hover {
         &:before {
           opacity: 1;
-          background: $navi-light;
+          background: $navy-light;
         }
       }
     }
@@ -1373,7 +1373,7 @@ section.slider {
     z-index: 8888;
 
     .circle {
-      border: 2px solid $navigation-circle;
+      border: 2px solid $navygation-circle;
       width: 13px;
       height: 13px;
       display: inline-block;
@@ -1411,7 +1411,7 @@ section.slider {
       &.active,
       &:hover {
         .circle {
-          border-color: $navi-light;
+          border-color: $navy-light;
         }
 
         .label {
@@ -1625,8 +1625,8 @@ picture img {
     border-bottom-color: transparentize(#111417, .5);
 
     &:hover {
-      color: $navi;
-      border-bottom-color: transparentize($navi, .5);
+      color: $navy;
+      border-bottom-color: transparentize($navy, .5);
     }
   }
 
@@ -1644,7 +1644,7 @@ picture img {
   .label {
     font-family: 'Myriad Pro Medium', sans-serif;
     font-size: 21px;
-    color: $navi;
+    color: $navy;
     margin-bottom: 5px;
     letter-spacing: .5px;
   }
@@ -1694,7 +1694,7 @@ picture img {
           width: 74px;
         }
         top: 32px;
-        background: $navi-light;
+        background: $navy-light;
       }
     }
   }
@@ -1792,7 +1792,7 @@ picture img {
       text-decoration: none;
       display: inline-block;
       border-bottom: 1px solid;
-      color: $navi-light;
+      color: $navy-light;
       line-height: 1;
     }
 
@@ -1831,7 +1831,7 @@ picture img {
       position: absolute;
       width: 10px;
       height: 10px;
-      border: 2px solid $navi-light;
+      border: 2px solid $navy-light;
       border-radius: 50%;
     }
   }
@@ -1875,7 +1875,7 @@ picture img {
         height: 2px;
         width: 150px;
         top: 27px;
-        background: $navi-light;
+        background: $navy-light;
       }
     }
   }
@@ -1929,6 +1929,7 @@ picture img {
     .image {
       display: block;
       border: 1px solid $card-border;
+      text-decoration: none;
     }
 
     img {
@@ -1951,11 +1952,17 @@ picture img {
     }
 
     .title {
+      text-decoration: none;
+      transition: color 250ms ease;
+      display: inline-block;
       @include respond($mobile-breakpoint) {
         font-size: 36px;
       }
       @include respond(0, $mobile-breakpoint) {
         font-size: 24px;
+      }
+      &:hover {
+        color: $navy;
       }
       color: $dark;
       letter-spacing: -0.5px;
