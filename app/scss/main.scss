@@ -1909,7 +1909,7 @@ picture img {
     padding: 70px 0 140px 0;
   }
   @include respond(0, $mobile-breakpoint) {
-    padding: 45px 0 140px 0;
+    padding: 45px 0 50px 0;
   }
 }
 
