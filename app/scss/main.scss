@@ -1373,7 +1373,7 @@ section.slider {
     z-index: 8888;
 
     .circle {
-      border: 2px solid $navygation-circle;
+      border: 2px solid $navigation-circle;
       width: 13px;
       height: 13px;
       display: inline-block;
@@ -1929,7 +1929,11 @@ picture img {
     .image {
       display: block;
       border: 1px solid $card-border;
+      transition: border-color 250ms ease;
       text-decoration: none;
+      &:hover {
+        border-color: $navy-light;
+      }
     }
 
     img {
