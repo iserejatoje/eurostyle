@@ -5,6 +5,11 @@
 @import "mixins";
 @import "swiper";
 
+body,
+html {
+  height: 100%;
+}
+
 body {
   font-family: 'Myriad Pro', sans-serif;
   color: $dark;
@@ -20,7 +25,12 @@ body {
 
 .menu {
   position: fixed;
-  top: 0;
+  @include respond($mobile-breakpoint) {
+    top: 109px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    top: 74px;
+  }
   left: 0;
   right: 0;
   bottom: 0;
@@ -404,37 +414,34 @@ svg {
 }
 
 .categories {
-  @include respond(980px) {
-    margin-bottom: 45px;
-    margin-top: 56px;
-  }
-  @include respond(0, 980px) {
-    margin-top: 35px;
-    margin-bottom: 30px;
-  }
+  display: flex;
+  flex-wrap: wrap;
 
-  display: grid;
-  grid-gap: 20px;
-
-
-  @include respond(1140px) {
-    grid-auto-flow: column;
+  @include respond($mobile-breakpoint) {
+    grid-gap: 20px;
   }
-  @include respond(0, 1140px) {
-    justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(auto, 258px));
+  @include respond(0, $mobile-breakpoint) {
+    grid-gap: 15px;
   }
 
   .category-item {
-    height: 58px;
     border: 1px solid transparentize($dark, .7);
     border-radius: 40px;
     display: inline-flex;
     color: $light-gray;
-    padding: 0 15px;
+    @include respond($mobile-breakpoint) {
+      padding: 0 28px;
+      min-height: 60px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      padding: 0 20px;
+      min-height: 50px;
+    }
+    min-width: 80px;
     align-items: center;
     text-align: center;
     justify-content: center;
+    box-sizing: border-box;
     text-decoration: none;
     transition: border 260ms ease, color 260ms ease, background 260ms ease;
     font-family: "Myriad Pro Medium", sans-serif;
@@ -494,6 +501,7 @@ header {
   .contacts {
     @include respond($mobile-breakpoint) {
       display: flex;
+      margin-right: 20px;
     }
     @include respond(0, $mobile-breakpoint) {
       display: none;
@@ -502,6 +510,8 @@ header {
 }
 
 footer {
+  flex: 0 0 auto;
+
   &.separator {
     border-top: 1px solid $footer-border;
   }
@@ -652,29 +662,42 @@ footer {
   background: transparent;
   outline: none;
   border: none;
-  width: 32px;
+  width: 35px;
   height: 20px;
   padding: 0;
   cursor: pointer;
   appearance: none;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  &:hover {
+    .burger-line:first-child {
+      width: 20px;
+    }
+
+    .burger-line:last-child {
+      width: 35px;
+    }
+  }
 
   .burger-line {
     background: $navi;
     height: 2px;
     display: block;
+    transition: width 300ms ease;
 
     &:not(:last-child) {
       margin-bottom: 5px;
     }
 
     &:nth-child(1) {
-      width: 32px;
+      width: 35px;
     }
 
     &:nth-child(2) {
-      width: 32px;
+      width: 35px;
     }
 
     &:nth-child(3) {
@@ -1517,15 +1540,20 @@ section.catalog {
 
 }
 
-section.contacts {
-  position: relative;
-
+.content-block {
   @include respond($mobile-breakpoint) {
-    height: 800px;
     margin-top: 78px;
   }
   @include respond(0, $mobile-breakpoint) {
     margin-top: 32px;
+  }
+}
+
+.contacts-wrapper {
+  position: relative;
+
+  @include respond($mobile-breakpoint) {
+    height: 800px;
   }
 
   .absolute-container {
@@ -1864,4 +1892,91 @@ picture img {
   @include respond(0, $mobile-breakpoint) {
     margin-bottom: 40px;
   }
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  .app-inner {
+    flex: 1 0 auto;
+  }
+}
+
+.news-wrapper {
+  @include respond($mobile-breakpoint) {
+    padding: 70px 0 140px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 45px 0 140px 0;
+  }
+}
+
+.news-cards {
+  margin-top: 46px;
+  margin-bottom: 10px;
+
+  @include respond($mobile-breakpoint) {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    margin-bottom: 38px;
+
+    .image {
+      display: block;
+      border: 1px solid $card-border;
+    }
+
+    img {
+      max-width: 100%;
+      width: 100%;
+      display: block;
+    }
+
+    .category {
+      @include respond($mobile-breakpoint) {
+        font-size: 18px;
+      }
+      @include respond(0, $mobile-breakpoint) {
+        font-size: 16px;
+      }
+      color: $light-gray;
+      line-height: 1.722;
+      letter-spacing: -0.25px;
+      padding: 24px 0 3px 0;
+    }
+
+    .title {
+      @include respond($mobile-breakpoint) {
+        font-size: 36px;
+      }
+      @include respond(0, $mobile-breakpoint) {
+        font-size: 24px;
+      }
+      color: $dark;
+      letter-spacing: -0.5px;
+      font-weight: bold;
+      line-height: 1.389;
+      margin-bottom: 8px;
+    }
+
+    .excerpt {
+      letter-spacing: -0.3px;
+      color: $dark;
+      line-height: 1.778;
+
+      @include respond($mobile-breakpoint) {
+        font-size: 18px;
+      }
+      @include respond(0, $mobile-breakpoint) {
+        font-size: 16px;
+      }
+
+    }
+  }
+
 }

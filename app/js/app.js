@@ -123,24 +123,24 @@ $(document).ready(function () {
 
     $('.categories').on('click', '.category-item', function() {
 
-        $(this).addClass('active').siblings().removeClass('active');
-
-        $.ajax({
-            url: '/bitrix/templates/eurostyle/ajax.php',
-            data: {
-                'SECTION_ID': $(this).attr('data-id'),
-            },
-            type: 'post',
-            success: function(data) {
-                if ($(data).find('.product-card ').length > 0) {
-                    $('.product-grid').html($(data).html()).removeClass('inline');
-                } else {
-                    $('.product-grid').html('На данный момент товары для этой категории не предоставлены.').addClass('inline');
-                }
-            }
-        })
-
-        return false;
+        // $(this).addClass('active').siblings().removeClass('active');
+        //
+        // $.ajax({
+        //     url: '/bitrix/templates/eurostyle/ajax.php',
+        //     data: {
+        //         'SECTION_ID': $(this).attr('data-id'),
+        //     },
+        //     type: 'post',
+        //     success: function(data) {
+        //         if ($(data).find('.product-card ').length > 0) {
+        //             $('.product-grid').html($(data).html()).removeClass('inline');
+        //         } else {
+        //             $('.product-grid').html('На данный момент товары для этой категории не предоставлены.').addClass('inline');
+        //         }
+        //     }
+        // })
+        //
+        // return false;
     });
 
     let swiper = new Swiper('.slider-block', {
