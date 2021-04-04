@@ -18,6 +18,15 @@ body {
     overflow: hidden;
 
     .menu {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .btn-burger {
+      display: none;
+    }
+
+    .btn-close {
       display: block;
     }
   }
@@ -26,76 +35,146 @@ body {
 .menu {
   position: fixed;
   @include respond($mobile-breakpoint) {
+    padding: 60px 0;
     top: 109px;
   }
   @include respond(0, $mobile-breakpoint) {
+    padding: 30px 0;
     top: 74px;
   }
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 9999;
-  background: $white;
+  background: $menu-bg;
   overflow: auto;
-  padding: 60px 15px;
-  text-align: center;
   display: none;
 
-  button {
-    padding: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    background: $catalog-background;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
+  .phones-list {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
 
-    svg {
-      fill: $light-gray;
+    @include respond($mobile-breakpoint) {
+      margin-top: 20px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      margin-top: 10px;
+    }
+
+    .phone-item {
+      font-size: 21px;
+      color: $dark;
+      text-decoration: none;
+      font-weight: bold;
+      line-height: 1.762;
+      transition: color 200ms ease;
+      &:hover {
+        color: $menu-link;
+      }
     }
   }
 
-  .phone {
-    font-size: 24px;
-    margin-bottom: 10px;
+  .address {
+    font-size: 18px;
+    color: $dark;
+    font-weight: 600;
+    line-height: 1.778;
+    margin-top: 8px;
+  }
+
+  .placeholder-svg {
+    transform: translateX(-3px);
   }
 
   .email {
-    font-size: 18px;
-  }
-
-  .contacts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .location {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 15px 0 42px;
-
-    svg {
-      fill: $navy-light;
-      margin-right: 11px;
+    @include respond($mobile-breakpoint) {
+      margin: 36px 0;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      margin: 15px 0 30px 0;
+    }
+    letter-spacing: .7px;
+    transition: color 200ms ease, border-bottom-color 200ms ease;
+    &:hover {
+      color: $menu-link;
+      border-bottom-color: $menu-link;
     }
   }
 
-  .logo-excerpt {
-    max-width: 300px;
-    margin: 15px auto 45px auto;
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+    gap: 18px;
+
+    .menu-link {
+      font-size: 18px;
+      line-height: 1.944;
+      color: $dark;
+      text-decoration: none;
+      position: relative;
+      padding-left: 42px;
+      letter-spacing: -0.5px;
+      transition: color 200ms ease;
+      span {
+        border-bottom: 1px solid $menu-bg;
+        transition: border-bottom-color 200ms ease;
+      }
+      &:hover {
+        color: $menu-link;
+        &:before {
+          background: $menu-link;
+        }
+        span {
+          border-bottom: 1px solid $menu-link;
+        }
+      }
+      &:before {
+        transition: background 200ms ease;
+        content: '';
+        position: absolute;
+        background: $dark;
+        top: 16px;
+        left: 0;
+        width: 25px;
+        height: 1px;
+      }
+    }
   }
 
-  @include respond(980px) {
-    display: none;
+  .menu-inner {
+    position: relative;
+    margin: auto;
+    width: 100%;
+
+    @include respond($mobile-breakpoint) {
+      padding-bottom: 178px;
+    }
   }
+
+  .menu-wrapper {
+
+    .large-link {
+      @include respond($mobile-breakpoint) {
+        font-size: 48px;
+      }
+      @include respond(0, $mobile-breakpoint) {
+        font-size: 36px;
+      }
+      line-height: 1.542;
+      color: $dark;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 200ms ease;
+      letter-spacing: -1.6px;
+      &:hover {
+        color: $menu-link;
+      }
+    }
+  }
+
 }
 
 .container {
@@ -520,7 +599,6 @@ header {
   .contacts {
     @include respond($mobile-breakpoint) {
       display: flex;
-      margin-right: 20px;
     }
     @include respond(0, $mobile-breakpoint) {
       display: none;
@@ -580,6 +658,12 @@ footer {
   }
 }
 
+.location {
+  svg {
+    fill: $navy-light;
+  }
+}
+
 header,
 footer {
   .logo-excerpt {
@@ -613,7 +697,6 @@ footer {
 
     svg {
       margin-right: 8px;
-      fill: $navy-light;
       @include respond(0, $mobile-breakpoint) {
         display: none;
       }
@@ -634,7 +717,9 @@ footer {
   }
 
   .burger {
-    height: 19px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   .phone {
@@ -674,6 +759,20 @@ footer {
         max-width: 206px;
       }
     }
+  }
+}
+
+.btn-close {
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: none;
+  margin-left: 9px;
+
+  svg {
+    fill: $navy;
   }
 }
 
@@ -1942,6 +2041,7 @@ picture img {
       border: 1px solid $card-border;
       transition: border-color 250ms ease;
       text-decoration: none;
+
       &:hover {
         border-color: $navy-light;
       }
@@ -1976,9 +2076,11 @@ picture img {
       @include respond(0, $mobile-breakpoint) {
         font-size: 24px;
       }
+
       &:hover {
         color: $navy;
       }
+
       color: $dark;
       letter-spacing: -0.5px;
       font-weight: bold;
@@ -2014,6 +2116,7 @@ picture img {
   @include respond(0, 580px) {
     row-gap: 45px;
   }
+
   .logo-item {
     @include respond(0, 580px) {
       width: 100%;
@@ -2026,6 +2129,7 @@ picture img {
       align-items: center;
       justify-content: center;
     }
+
     img {
       display: inline-block;
       max-width: 100%;
@@ -2038,22 +2142,27 @@ picture img {
     max-width: 100%;
     display: block;
   }
+
   @include respond($mobile-breakpoint) {
     padding: 90px 0 78px 0;
   }
   @include respond(0, $mobile-breakpoint) {
     padding: 40px 0 25px 0;
   }
+
   .text-block_formatted {
     margin-bottom: 2em;
+
     b,
     strong {
       @extend .text-20;
     }
   }
+
   .text-block_html {
     @extend .text-18;
     margin-bottom: 1.8em;
+
     b,
     strong {
       font-weight: 600;
@@ -2094,6 +2203,7 @@ picture img {
       margin-bottom: 24px
     }
   }
+
   .heading-block {
     @include respond($mobile-breakpoint) {
       padding-top: 84px;
@@ -2105,10 +2215,12 @@ picture img {
     }
 
   }
+
   .about-image {
     display: block;
     max-width: 100%;
   }
+
   .description {
     @extend .text-20;
     margin-top: 15px;
@@ -2124,6 +2236,7 @@ picture img {
   @include respond(0, 760px) {
     row-gap: 20px;
   }
+
   .number-item {
     display: flex;
     flex-direction: column;
@@ -2152,6 +2265,7 @@ picture img {
     }
 
   }
+
   .number {
     color: $light-blue;
     @include respond($mobile-breakpoint) {
@@ -2163,12 +2277,14 @@ picture img {
     font-weight: 600;
     letter-spacing: -3px;
   }
+
   .line {
     background: $light-blue;
     height: 2px;
     width: 70px;
     margin-left: 6px;
   }
+
   .title {
     font-size: 18px;
     margin-top: 12px;
@@ -2193,6 +2309,7 @@ picture img {
     margin-top: -90px;
     margin-bottom: -18px;
   }
+
   img {
     display: block;
     height: auto;
@@ -2206,6 +2323,7 @@ picture img {
     margin-top: 24px;
     margin-bottom: 52px;
   }
+
   img {
     @include respond($mobile-breakpoint) {
       min-height: 552px;
@@ -2216,7 +2334,48 @@ picture img {
 
 .column-content {
   padding-top: 32px;
+}
 
+.column-3 {
+  @include respond(770px) {
+    display: flex;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    flex-wrap: wrap;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include respond(0, $mobile-breakpoint) {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &:nth-child(1) {
+      @include respond($mobile-breakpoint) {
+        max-width: 465px;
+        width: 100%;
+        row-gap: 35px;
+      }
+      @include respond(770px, $mobile-breakpoint) {
+        width: 50%;
+      }
+    }
+
+    &:nth-child(2) {
+      @include respond($mobile-breakpoint) {
+        max-width: 496px;
+        width: 100%;
+      }
+      @include respond(770px,$mobile-breakpoint) {
+        width: 50%;
+      }
+    }
+
+  }
 }
 
 .column-2 {

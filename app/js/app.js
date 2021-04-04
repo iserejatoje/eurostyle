@@ -62,6 +62,11 @@ $(document).ready(function () {
             $('body').addClass('mobile-menu');
         });
 
+    $('.btn-close')
+        .click(function() {
+            $('body').removeClass('mobile-menu');
+        });
+
     $('.menu button')
         .click(function() {
             $('body').removeClass('mobile-menu');
