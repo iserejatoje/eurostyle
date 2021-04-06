@@ -5,9 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Евростиль &mdash; Контакты</title>
+    <title>Евростиль &mdash; Сервис</title>
     <meta name="description" content="Евростиль">
-    <meta name="keywords" content="Евростиль">
+    <meta name="keywords" content="Проекты">
 
     <link rel="stylesheet" href="app/css/app.min.css">
     <link rel="preload" href="app/fonts/MyriadPro-SemiExt.woff" as="font" crossorigin="anonymous">
@@ -20,6 +20,7 @@
 <a href="#app" class="skip-link">Перейти к контенту</a>
 
 <div id="app">
+
     <div class="app-inner">
         <header>
             <div class="container">
@@ -71,47 +72,132 @@
             <div class="breadcrumbs">
                 <a href="/">Главная</a>
                 <span><svg width="11" height="13"><use xlink:href="app/images/sprite.svg#breadcrumbs"></use></svg></span>
-                <span>Контакты</span>
+                <span>Сервис</span>
             </div>
         </div>
 
         <div class="container">
-            <h1>Контакты</h1>
+            <h1>Сервис</h1>
         </div>
 
-        <section class="contacts-wrapper content-block asphalt">
-            <div class="container absolute-container">
+        <div class="service-wrapper content-block asphalt">
+            <div class="container">
+                <div class="block-title"><span>Что делаем</span></div>
+                <div class="service-excerpt">
+                    Помимо поставок медицинского оборудования, оказываем полный спектр услуг:
+                </div>
 
-                <div class="contacts-card">
-                    <div class="block-title"><span>Евростиль XXI</span></div>
-                    <div class="contacts-grid">
-                        <div class="first">
-                            <div class="label">Адрес</div>
-                            <div class="contact-item">г. Кемерово, ул. Мичурина, д. 56, офис 1</div>
-                        </div>
-                        <div class="label">Телефон/факс</div>
-                        <div class="contact-item">
-                            <div class="phone-list">
-                                <a href="tel:8 (3842) 58-82-75" class="phone">8 (3842) 58-82-75</a>
-                                <a href="tel:8 (3842) 58-81-27" class="phone">8 (3842) 58-81-27</a>
-                                <a href="tel:8 (3842) 58-79-94" class="phone">8 (3842) 58-79-94</a>
+                <div class="service-items">
+                    <div class="service-item">
+                        <span class="service-item_icon">
+                            <svg width="50" height="50"><use xlink:href="app/images/sprite.svg#settings"></use></svg>
+                        </span>
+                        <span class="service-item_title">Монтаж</span>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-item_icon">
+                            <svg width="50" height="44"><use xlink:href="app/images/sprite.svg#pulse"></use></svg>
+                        </span>
+                        <span class="service-item_title">Накладка</span>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-item_icon">
+                            <svg width="46" height="46"><use xlink:href="app/images/sprite.svg#hand-tool"></use></svg>
+                        </span>
+                        <span class="service-item_title">Диагностика</span>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-item_icon">
+                            <svg width="52" height="52"><use xlink:href="app/images/sprite.svg#support-services"></use></svg>
+                        </span>
+                        <span class="service-item_title">Обслуживание</span>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-item_icon">
+                            <svg width="49" height="49"><use xlink:href="app/images/sprite.svg#wrench"></use></svg>
+                        </span>
+                        <span class="service-item_title">Ремонт</span>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-item_icon">
+                            <svg width="49" height="49"><use xlink:href="app/images/sprite.svg#refresh"></use></svg>
+                        </span>
+                        <span class="service-item_title">Обновление</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="feedback-form">
+            <div class="container">
+                <div class="text-center">
+                    <div class="heading">Свяжитесь с нами</div>
+
+                    <div class="service-contact">
+                        <a href="tel:8 (3842) 58-82-75" class="item">
+                            <svg width="40" height="40"><use xlink:href="app/images/sprite.svg#Phone_black"></use></svg>
+                            8 (3842) 58-82-75
+                        </a>
+                        <a href="mailto:eurostylexxi@mail.ru" class="item">
+                            <svg width="40" height="40"><use xlink:href="app/images/sprite.svg#Mail_black"></use></svg>
+                            eurostylexxi@mail.ru
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center service-excerpt">Оставьте заявку, наш менеджер свяжеться с Вами в ближайшее время</div>
+
+                <div class="form">
+
+                    <form action="" autocomplete="off" method="post">
+                        <input type="hidden" name="form_type" value="consultation">
+
+                        <div class="row">
+                            <div class="input">
+                                <input id="firstname" required name="firstname" type="text" >
+                                <span>Ваше имя</span>
                             </div>
                         </div>
 
-                        <div class="label">E-mail</div>
-                        <div class="contact-item"><a href="mailto:eurostylexxi@mail.ru" class="email">eurostylexxi@mail.ru</a></div>
-                    </div>
+                        <div class="row columns">
+                            <div class="column">
+                                <div class="input">
+                                    <input id="phone" minlength="18" required name="phone" type="tel" >
+                                    <span>Ваш номер телефона</span>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="input">
+                                    <input id="email" required name="email" type="email" >
+                                    <span>Ваш e-mail</span>
+                                </div>
+                            </div>
+                        </div>
 
-                    <a href="#" class="btn">Карточка партнера</a>
+                        <div class="row">
+                            <div class="input">
+                                <input id="message" required name="message" type="text" >
+                                <span>Сообщение</span>
+                            </div>
+                        </div>
+
+                        <div class="form-controls">
+                            <div class="policy">
+                                <label class="checkbox">
+                                    <input checked type="checkbox" required>
+                                    <span></span>
+                                    Согласен с условиями обработки <a href="#">персональных данных</a>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn">Отправить</button>
+                        </div>
+
+                    </form>
+
                 </div>
-
             </div>
-
-            <div id="map"></div>
-
-        </section>
+        </div>
     </div>
-    <footer>
+    <footer class="separator">
         <div class="container">
             <div class="responsive-container">
 

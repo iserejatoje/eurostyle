@@ -295,12 +295,12 @@ svg {
 .form-controls {
   margin-top: 33px;
   display: flex;
-  @include respond(0, 500px) {
+  @include respond(0, 620px) {
     flex-direction: column;
   }
 
   .policy {
-    @include respond(0, 500px) {
+    @include respond(0, 620px) {
       margin-bottom: 34px;
     }
     flex: 1;
@@ -879,7 +879,7 @@ body.opened {
     border: none;
     outline: none;
     background: transparent;
-    transition: border 260ms ease;
+    transition: border 260ms ease, box-shadow 260ms ease;
     font-size: 18px;
     width: 100%;
     height: 31px;
@@ -891,6 +891,7 @@ body.opened {
 
     &:focus {
       border-bottom: 1px solid $navy-light;
+      box-shadow: 0 1px 0 0 $navy-light;
     }
   }
 }
@@ -1277,80 +1278,85 @@ h1 {
   right: 0;
   overflow: auto;
 
-  .popup {
+  .form {
+    padding: 64px 15px;
+    min-height: 590px;
+    box-sizing: border-box;
     max-width: 725px;
     position: relative;
     margin: auto;
-    background: $white;
-    box-sizing: border-box;
-    min-height: 590px;
-    width: 100%;
-    padding: 64px 15px;
 
     .inner {
       max-width: 610px;
       margin: 0 auto;
+    }
+  }
+}
 
-      form {
-        margin-top: 50px;
-      }
+.form {
+  background: $white;
+  width: 100%;
+
+  .inner {
+    form {
+      margin-top: 50px;
+    }
+  }
+
+  .columns {
+    display: flex;
+    margin: 47px 0;
+
+    @include respond(0, 620px) {
+      flex-direction: column;
     }
 
-    .columns {
-      display: flex;
-      @include respond(0, 500px) {
-        flex-direction: column;
-      }
+    .column {
+      flex: 1;
 
-      margin: 47px 0;
-
-      .column {
-        &:first-child {
-          @include respond(0, 500px) {
-            margin-bottom: 47px;
-          }
-          @include respond(500px) {
-            margin-right: 30px;
-          }
+      &:first-child {
+        @include respond(0, 620px) {
+          margin-bottom: 47px;
         }
-
-        flex: 1;
+        @include respond(620px) {
+          margin-right: 30px;
+        }
       }
     }
+  }
 
-    .title {
-      letter-spacing: 1px;
-      font-size: 42px;
-      text-align: center;
-      font-family: "Myriad Pro Medium", sans-serif;
-      margin-bottom: 21px;
-    }
+  .title {
+    letter-spacing: 1px;
+    font-size: 42px;
+    text-align: center;
+    font-family: "Myriad Pro Medium", sans-serif;
+    margin-bottom: 21px;
+  }
 
-    .description {
-      text-align: center;
-      font-size: 18px;
-      letter-spacing: -0.3px;
-      line-height: 1.4;
-    }
+  .description {
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+  }
 
-    .close-button {
-      padding: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      background: $catalog-background;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  .close-button {
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: $catalog-background;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-      svg {
-        fill: $light-gray;
-      }
+    svg {
+      fill: $light-gray;
     }
   }
 }
@@ -2494,5 +2500,135 @@ li {
 .article-block {
   .category {
     margin-bottom: 8px;
+  }
+}
+
+.service-wrapper {
+
+  .service-items {
+    display: flex;
+    @include respond(760px) {
+      flex-wrap: wrap;
+      row-gap: 90px;
+      margin-top: 60px;
+    }
+    @include respond(0, 760px) {
+      row-gap: 30px;
+      flex-direction: column;
+      margin: 30px 0;
+    }
+  }
+
+  .service-item {
+    @include respond(1233px) {
+      width: 33.3%;
+    }
+    @include respond(760px, 1233px) {
+      width: 50%;
+    }
+    display: flex;
+    align-items: center;
+  }
+
+  .service-item_title {
+    color: $dark;
+    font-size: 22px;
+    text-transform: lowercase;
+    line-height: 1.455;
+    margin-left: 18px;
+  }
+
+  .service-item_icon {
+    background: $navy-light;
+    border-radius: 50%;
+    width: 95px;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    svg {
+      fill: $white;
+    }
+  }
+  @include respond($mobile-breakpoint) {
+    padding: 110px 0 110px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 50px 0;
+  }
+
+}
+
+.service-excerpt {
+  @include respond($mobile-breakpoint) {
+    font-size: 20px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    font-size: 18px;
+  }
+  line-height: 1.75;
+  letter-spacing: -0.25px;
+}
+
+.service-contact {
+  display: inline-flex;
+  column-gap: 30px;
+  margin: 18px 0 18px 0;
+
+  @include respond(0, 620px) {
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+  }
+
+  svg {
+    fill: $navy-light;
+    margin-right: 15px;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $dark;
+    font-size: 22px;
+    transition: color 250ms ease;
+
+    &:hover {
+      color: $navy-light;
+    }
+  }
+}
+
+.feedback-form {
+  @include respond($mobile-breakpoint) {
+    padding: 110px 0 100px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 50px 0 60px 0;
+  }
+
+  .form {
+    max-width: 727px;
+    background: $catalog-background;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border-left: 1px solid $card-border;
+    border-top: 1px solid $card-border;
+    border-right: 1px solid $card-border;
+    border-bottom: 2px solid $navy-light;
+    margin-top: 25px;
+
+    @include respond(620px) {
+      padding: 56px 56px 92px 56px;
+    }
+    @include respond(0, 620px) {
+      padding: 30px;
+    }
+
   }
 }
