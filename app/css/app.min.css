@@ -2614,14 +2614,18 @@ h1 {
   top: 0;
   bottom: 0;
   right: 0;
-  overflow: auto; }
+  overflow: auto;
+  padding: 15px; }
   .overlay .form {
-    padding: 64px 15px;
+    padding: 64px 20px;
     min-height: 590px;
     box-sizing: border-box;
     max-width: 725px;
     position: relative;
-    margin: auto; }
+    margin: auto;
+    border: 1px solid #d0d0d0;
+    border-bottom: 2px solid #87b0dd;
+    box-shadow: 0 29px 49px 0 rgba(0, 0, 0, 0.15); }
     .overlay .form .inner {
       max-width: 610px;
       margin: 0 auto; }

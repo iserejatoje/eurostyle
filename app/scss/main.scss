@@ -1277,14 +1277,18 @@ h1 {
   bottom: 0;
   right: 0;
   overflow: auto;
+  padding: 15px;
 
   .form {
-    padding: 64px 15px;
+    padding: 64px 20px;
     min-height: 590px;
     box-sizing: border-box;
     max-width: 725px;
     position: relative;
     margin: auto;
+    border: 1px solid $card-border;
+    border-bottom: 2px solid $navy-light;
+    box-shadow: 0 29px 49px 0 rgba(0, 0, 0, 0.15);
 
     .inner {
       max-width: 610px;
