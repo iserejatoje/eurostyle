@@ -7,5 +7,6 @@
 - [Статья](https://iserejatoje.github.io/eurostyle/article.html)
 - [Сервис](https://iserejatoje.github.io/eurostyle/service.html)
 - [О компании](https://iserejatoje.github.io/eurostyle/about.html)
+- [Карточка продукта](https://iserejatoje.github.io/eurostyle/detail.html)
 
 Made by Atom Web Studio ❤ 2021
