@@ -223,6 +223,28 @@ $(document).ready(function () {
         }
     });
 
+    let articles = new Swiper('.articles-slider', {
+        speed: 400,
+        pagination: {
+            el: '.articles-items .pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            },
+            800: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            1366: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+        }
+    });
+
     $('.navigation').on('click', 'a', function () {
         $transition = true;
         $('body, html').animate({scrollTop: $('section'+$(this).attr('href')).offset().top}, 600, function() {

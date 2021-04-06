@@ -69,6 +69,7 @@ body {
       font-weight: bold;
       line-height: 1.762;
       transition: color 200ms ease;
+
       &:hover {
         color: $menu-link;
       }
@@ -96,6 +97,7 @@ body {
     }
     letter-spacing: .7px;
     transition: color 200ms ease, border-bottom-color 200ms ease;
+
     &:hover {
       color: $menu-link;
       border-bottom-color: $menu-link;
@@ -118,19 +120,24 @@ body {
       padding-left: 42px;
       letter-spacing: -0.5px;
       transition: color 200ms ease;
+
       span {
         border-bottom: 1px solid $menu-bg;
         transition: border-bottom-color 200ms ease;
       }
+
       &:hover {
         color: $menu-link;
+
         &:before {
           background: $menu-link;
         }
+
         span {
           border-bottom: 1px solid $menu-link;
         }
       }
+
       &:before {
         transition: background 200ms ease;
         content: '';
@@ -169,6 +176,7 @@ body {
       font-weight: 600;
       transition: color 200ms ease;
       letter-spacing: -1.6px;
+
       &:hover {
         color: $menu-link;
       }
@@ -1196,15 +1204,37 @@ h1 {
   letter-spacing: -1px;
 }
 
+.border-block {
+  border: 1px solid $card-border;
+}
+
+.responsive-image {
+  max-width: 100%;
+}
+
 .breadcrumbs {
   font-size: 15px;
-  padding-bottom: 18px;
 
   @include respond($mobile-breakpoint) {
-    padding-top: 52px;
+    &:not(.breadcrumbs-light) {
+      padding-top: 52px;
+      padding-bottom: 18px;
+    }
+    &.breadcrumbs-light {
+      padding-top: 28px;
+      padding-bottom: 68px;
+    }
   }
   @include respond(0, $mobile-breakpoint) {
-    padding-top: 16px;
+
+    &:not(.breadcrumbs-light) {
+      padding-top: 16px;
+      padding-bottom: 18px;
+    }
+    &.breadcrumbs-light {
+      padding-top: 16px;
+      padding-bottom: 35px;
+    }
   }
 
   span {
@@ -1226,7 +1256,7 @@ h1 {
 
   svg {
     @include respond($mobile-breakpoint) {
-      margin: 0 18px;
+      margin: 0 16px;
     }
     @include respond(0, $mobile-breakpoint) {
       margin: 0 7px;
@@ -1920,34 +1950,7 @@ picture img {
     }
   }
 
-  ul,
-  li {
-    list-style: none;
-  }
-
-  li {
-    position: relative;
-    padding-left: 34px;
-    line-height: 1.778;
-
-    &:not(:last-child) {
-      margin-bottom: 8px;
-    }
-
-    &:before {
-      left: 0;
-      top: 9px;
-      content: '';
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border: 2px solid $navy-light;
-      border-radius: 50%;
-    }
-  }
-
   ul {
-    padding: 0;
     margin: 0 0 26px;
   }
 
@@ -2023,16 +2026,28 @@ picture img {
   }
 }
 
-.news-cards {
-  margin-top: 46px;
-  margin-bottom: 10px;
+.articles-items {
+  background: $catalog-background;
 
   @include respond($mobile-breakpoint) {
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: 1fr 1fr;
+    padding: 100px 0 120px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 50px 0;
   }
 
+  .heading {
+
+    @include respond($mobile-breakpoint) {
+      margin-bottom: 45px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.news-block {
   .card {
     margin-bottom: 38px;
 
@@ -2051,19 +2066,6 @@ picture img {
       max-width: 100%;
       width: 100%;
       display: block;
-    }
-
-    .category {
-      @include respond($mobile-breakpoint) {
-        font-size: 18px;
-      }
-      @include respond(0, $mobile-breakpoint) {
-        font-size: 16px;
-      }
-      color: $light-gray;
-      line-height: 1.722;
-      letter-spacing: -0.25px;
-      padding: 24px 0 3px 0;
     }
 
     .title {
@@ -2102,6 +2104,18 @@ picture img {
 
     }
   }
+}
+
+.news-cards {
+  margin-top: 46px;
+  margin-bottom: 10px;
+
+  @include respond($mobile-breakpoint) {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+  }
+
 }
 
 .logo-list {
@@ -2343,6 +2357,7 @@ picture img {
   @include respond(0, $mobile-breakpoint) {
     flex-wrap: wrap;
   }
+
   .column {
     display: flex;
     flex-direction: column;
@@ -2370,7 +2385,7 @@ picture img {
         max-width: 496px;
         width: 100%;
       }
-      @include respond(770px,$mobile-breakpoint) {
+      @include respond(770px, $mobile-breakpoint) {
         width: 50%;
       }
     }
@@ -2387,5 +2402,97 @@ picture img {
 
   .column {
     flex: 1;
+  }
+}
+
+.text-content {
+  font-size: 18px;
+  color: $dark;
+  letter-spacing: -0.3px;
+  line-height: 1.778;
+
+  @include respond($mobile-breakpoint) {
+    padding-bottom: 130px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding-bottom: 20px;
+  }
+
+  img {
+    @extend .border-block, .responsive-image;
+  }
+  ul {
+    margin-bottom: 25px;
+  }
+  h2 {
+    font-size: 21px;
+    line-height: 1.667;
+    font-weight: 600;
+  }
+  b,
+  strong {
+    font-weight: 600;
+  }
+  a {
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 1px solid;
+    color: $navy-light;
+    line-height: 1;
+  }
+  p {
+    font-size: 18px;
+    color: $dark;
+    line-height: 1.778;
+    margin-bottom: 1.62em;
+  }
+}
+
+.category {
+  @include respond($mobile-breakpoint) {
+    font-size: 18px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    font-size: 16px;
+  }
+  color: $light-gray;
+  line-height: 1.722;
+  letter-spacing: -0.25px;
+  padding: 24px 0 3px 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  position: relative;
+  padding-left: 34px;
+  line-height: 1.778;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  &:before {
+    left: 0;
+    top: 9px;
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid $navy-light;
+    border-radius: 50%;
+  }
+}
+
+.article-block {
+  .category {
+    margin-bottom: 8px;
   }
 }
