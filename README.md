@@ -3,6 +3,7 @@
 - [Главная](https://iserejatoje.github.io/eurostyle/frontpage.html)
 - [Контакты](https://iserejatoje.github.io/eurostyle/contacts.html)
 - [Проекты](https://iserejatoje.github.io/eurostyle/projects.html)
+- [Проект](https://iserejatoje.github.io/eurostyle/project.html)
 - [Новости](https://iserejatoje.github.io/eurostyle/news.html)
 - [Статья](https://iserejatoje.github.io/eurostyle/article.html)
 - [Сервис](https://iserejatoje.github.io/eurostyle/service.html)

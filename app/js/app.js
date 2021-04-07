@@ -223,6 +223,28 @@ $(document).ready(function () {
         }
     });
 
+    let project_other = new Swiper('.project-slider', {
+        speed: 400,
+        pagination: {
+            el: '.projects-slider_wrapper .swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+            },
+            800: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            1120: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+        }
+    });
+
     let articles = new Swiper('.articles-slider', {
         speed: 400,
         pagination: {

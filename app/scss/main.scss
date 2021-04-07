@@ -2676,6 +2676,30 @@ li {
   background: $catalog-background;
 }
 
+.project-slider {
+  margin-top: 50px;
+}
+
+.project-block {
+  background: $catalog-background;
+  @include respond($mobile-breakpoint) {
+    padding: 70px 0 0 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 30px 0 0 0;
+  }
+  .name {
+    font-size: 18px;
+    color: $light-gray;
+    line-height: 1.722;
+    letter-spacing: -0.5px;
+    margin-bottom: 9px;
+  }
+  .title {
+    margin-bottom: 24px;
+  }
+}
+
 .projects {
   .card {
     background: $white;
@@ -2708,6 +2732,8 @@ li {
     margin: 10px 0;
     letter-spacing: 0.1px;
     font-weight: 600;
+    text-decoration: none;
+    color: $dark;
   }
   .text {
     letter-spacing: -0.3px;
@@ -2716,5 +2742,17 @@ li {
   }
   .btn-small {
     margin-top: 25px;
+  }
+}
+
+.projects-slider_wrapper {
+  @include respond($mobile-breakpoint) {
+    padding: 110px 0 120px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 45px 0 55px 0;
+  }
+  .swiper-pagination {
+    margin-top: 40px;
   }
 }
