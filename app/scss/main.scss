@@ -254,7 +254,7 @@ svg {
 
   &:hover {
     background: $btn-hover;
-    box-shadow: 0 4px 32px 4px rgba(41, 74, 111, .22);
+    box-shadow: 0 4px 32px 4px rgba(41, 74, 111, .18);
   }
 }
 
@@ -329,9 +329,16 @@ svg {
   outline: none;
   cursor: pointer;
   border: 1px solid transparentize($dark, .7);
-  padding: 0 35px;
+  padding: 0 38px;
+
+  &:hover {
+    svg {
+      transform: rotate(90deg);
+    }
+  }
 
   svg {
+    transition: transform 250ms ease;
     fill: $light-gray;
     margin-left: 14px;
   }
@@ -352,10 +359,11 @@ svg {
   font-family: 'Myriad Pro Medium', sans-serif;
   font-size: 16px;
   background: $navy;
-  transition: background 280ms ease;
+  transition: background 280ms ease, box-shadow 280ms ease;
 
   &:hover {
     background: $btn-hover;
+    box-shadow: 0 4px 32px 4px rgba(41, 74, 111, .18);
   }
 }
 
@@ -2028,6 +2036,7 @@ picture img {
 }
 
 .news-wrapper {
+  background: $catalog-background;
   @include respond($mobile-breakpoint) {
     padding: 70px 0 140px 0;
   }
@@ -2508,6 +2517,7 @@ li {
 }
 
 .service-wrapper {
+  background: $catalog-background;
 
   .service-items {
     display: flex;
@@ -2634,5 +2644,77 @@ li {
       padding: 30px;
     }
 
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-gap: 30px;
+
+  @include respond($mobile-breakpoint) {
+    margin-bottom: 60px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    margin-bottom: 40px;
+  }
+
+  @include respond(1100px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @include respond(760px, 1100px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.projects-block {
+  @include respond($mobile-breakpoint) {
+    padding: 70px 0 115px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 30px 0 50px 0;
+  }
+  background: $catalog-background;
+}
+
+.projects {
+  .card {
+    background: $white;
+    border: 1px solid $card-border;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 240ms ease;
+    @include respond($mobile-breakpoint) {
+      min-height: 480px;
+      padding: 40px 40px 50px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      padding: 25px 25px 30px;
+    }
+    &:hover {
+      border: 1px solid $navy-light;
+    }
+  }
+  .name {
+    font-size: 16px;
+    letter-spacing: -0.8px;
+    line-height: 20px;
+    color: $light-gray;
+  }
+  .title {
+    font-size: 20px;
+    line-height: 1.7;
+    margin: 10px 0;
+    letter-spacing: 0.1px;
+    font-weight: 600;
+  }
+  .text {
+    letter-spacing: -0.3px;
+    line-height: 1.9;
+    flex: 1;
+  }
+  .btn-small {
+    margin-top: 25px;
   }
 }

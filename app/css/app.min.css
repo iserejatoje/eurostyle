@@ -1853,7 +1853,7 @@ svg {
   transition: background 280ms ease, box-shadow 280ms ease; }
   .btn:hover {
     background: #294a6f;
-    box-shadow: 0 4px 32px 4px rgba(41, 74, 111, 0.22); }
+    box-shadow: 0 4px 32px 4px rgba(41, 74, 111, 0.18); }
 
 .checkbox {
   color: #9da1a7;
@@ -1912,8 +1912,11 @@ svg {
   outline: none;
   cursor: pointer;
   border: 1px solid rgba(54, 54, 54, 0.3);
-  padding: 0 35px; }
+  padding: 0 38px; }
+  .btn-transparent:hover svg {
+    transform: rotate(90deg); }
   .btn-transparent svg {
+    transition: transform 250ms ease;
     fill: #9da1a7;
     margin-left: 14px; }
 
@@ -1931,9 +1934,10 @@ svg {
   font-family: 'Myriad Pro Medium', sans-serif;
   font-size: 16px;
   background: #37597F;
-  transition: background 280ms ease; }
+  transition: background 280ms ease, box-shadow 280ms ease; }
   .btn-small:hover {
-    background: #294a6f; }
+    background: #294a6f;
+    box-shadow: 0 4px 32px 4px rgba(41, 74, 111, 0.18); }
 
 .phone {
   font-weight: bold;
@@ -3217,13 +3221,14 @@ picture img {
   #app .app-inner {
     flex: 1 0 auto; }
 
-@media only all and (min-width: 1024px) {
-  .news-wrapper {
-    padding: 70px 0 140px 0; } }
-
-@media only all and (min-width: 0) and (max-width: 1023px) {
-  .news-wrapper {
-    padding: 45px 0 50px 0; } }
+.news-wrapper {
+  background: #f5f5f7; }
+  @media only all and (min-width: 1024px) {
+    .news-wrapper {
+      padding: 70px 0 140px 0; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .news-wrapper {
+      padding: 45px 0 50px 0; } }
 
 .articles-items {
   background: #f5f5f7; }
@@ -3580,56 +3585,53 @@ li {
 .article-block .category {
   margin-bottom: 8px; }
 
-.service-wrapper .service-items {
-  display: flex; }
-  @media only all and (min-width: 760px) {
-    .service-wrapper .service-items {
-      flex-wrap: wrap;
-      row-gap: 90px;
-      margin-top: 60px; } }
-  @media only all and (min-width: 0) and (max-width: 759px) {
-    .service-wrapper .service-items {
-      row-gap: 30px;
-      flex-direction: column;
-      margin: 30px 0; } }
-
-.service-wrapper .service-item {
-  display: flex;
-  align-items: center; }
-  @media only all and (min-width: 1233px) {
-    .service-wrapper .service-item {
-      width: 33.3%; } }
-  @media only all and (min-width: 760px) and (max-width: 1232px) {
-    .service-wrapper .service-item {
-      width: 50%; } }
-
-.service-wrapper .service-item_title {
-  color: #363636;
-  font-size: 22px;
-  text-transform: lowercase;
-  line-height: 1.455;
-  margin-left: 18px; }
-
-.service-wrapper .service-item_icon {
-  background: #87b0dd;
-  border-radius: 50%;
-  width: 95px;
-  height: 95px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  box-sizing: border-box; }
-  .service-wrapper .service-item_icon svg {
-    fill: #fff; }
-
-@media only all and (min-width: 1024px) {
-  .service-wrapper {
-    padding: 110px 0 110px 0; } }
-
-@media only all and (min-width: 0) and (max-width: 1023px) {
-  .service-wrapper {
-    padding: 40px 0 50px 0; } }
+.service-wrapper {
+  background: #f5f5f7; }
+  .service-wrapper .service-items {
+    display: flex; }
+    @media only all and (min-width: 760px) {
+      .service-wrapper .service-items {
+        flex-wrap: wrap;
+        row-gap: 90px;
+        margin-top: 60px; } }
+    @media only all and (min-width: 0) and (max-width: 759px) {
+      .service-wrapper .service-items {
+        row-gap: 30px;
+        flex-direction: column;
+        margin: 30px 0; } }
+  .service-wrapper .service-item {
+    display: flex;
+    align-items: center; }
+    @media only all and (min-width: 1233px) {
+      .service-wrapper .service-item {
+        width: 33.3%; } }
+    @media only all and (min-width: 760px) and (max-width: 1232px) {
+      .service-wrapper .service-item {
+        width: 50%; } }
+  .service-wrapper .service-item_title {
+    color: #363636;
+    font-size: 22px;
+    text-transform: lowercase;
+    line-height: 1.455;
+    margin-left: 18px; }
+  .service-wrapper .service-item_icon {
+    background: #87b0dd;
+    border-radius: 50%;
+    width: 95px;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box; }
+    .service-wrapper .service-item_icon svg {
+      fill: #fff; }
+  @media only all and (min-width: 1024px) {
+    .service-wrapper {
+      padding: 110px 0 110px 0; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .service-wrapper {
+      padding: 40px 0 50px 0; } }
 
 .service-excerpt {
   line-height: 1.75;
@@ -3689,3 +3691,67 @@ li {
   @media only all and (min-width: 0) and (max-width: 619px) {
     .feedback-form .form {
       padding: 30px; } }
+
+.projects-grid {
+  display: grid;
+  grid-gap: 30px; }
+  @media only all and (min-width: 1024px) {
+    .projects-grid {
+      margin-bottom: 60px; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .projects-grid {
+      margin-bottom: 40px; } }
+  @media only all and (min-width: 1100px) {
+    .projects-grid {
+      grid-template-columns: 1fr 1fr 1fr; } }
+  @media only all and (min-width: 760px) and (max-width: 1099px) {
+    .projects-grid {
+      grid-template-columns: 1fr 1fr; } }
+
+.projects-block {
+  background: #f5f5f7; }
+  @media only all and (min-width: 1024px) {
+    .projects-block {
+      padding: 70px 0 115px 0; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .projects-block {
+      padding: 30px 0 50px 0; } }
+
+.projects .card {
+  background: #fff;
+  border: 1px solid #d0d0d0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 240ms ease; }
+  @media only all and (min-width: 1024px) {
+    .projects .card {
+      min-height: 480px;
+      padding: 40px 40px 50px; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .projects .card {
+      padding: 25px 25px 30px; } }
+  .projects .card:hover {
+    border: 1px solid #87b0dd; }
+
+.projects .name {
+  font-size: 16px;
+  letter-spacing: -0.8px;
+  line-height: 20px;
+  color: #9da1a7; }
+
+.projects .title {
+  font-size: 20px;
+  line-height: 1.7;
+  margin: 10px 0;
+  letter-spacing: 0.1px;
+  font-weight: 600; }
+
+.projects .text {
+  letter-spacing: -0.3px;
+  line-height: 1.9;
+  flex: 1; }
+
+.projects .btn-small {
+  margin-top: 25px; }
