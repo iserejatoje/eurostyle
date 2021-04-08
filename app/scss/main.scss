@@ -2641,7 +2641,7 @@ li {
       padding: 56px 56px 92px 56px;
     }
     @include respond(0, 620px) {
-      padding: 30px;
+      padding: 45px 30px;
     }
 
   }
@@ -2754,5 +2754,93 @@ li {
   }
   .swiper-pagination {
     margin-top: 40px;
+  }
+}
+
+.catalog-wrapper {
+  background: $catalog-background;
+
+  @include respond($mobile-breakpoint) {
+    padding: 125px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 45px 0;
+  }
+
+  .catalog-grid {
+    display: grid;
+    grid-gap: 30px;
+    @include respond(1080px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include respond(760px, 1080px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    .btn-small {
+      margin-left: 9px;
+      margin-top: 25px;
+    }
+    .card {
+      background: $white;
+      min-height: 427px;
+      border: 1px solid $card-border;
+      transition: border-color 250ms ease;
+      padding: 42px 30px 49px 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      .title {
+        font-size: 28px;
+        color: $dark;
+        font-weight: bold;
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+      }
+      .text {
+        font-size: 18px;
+        letter-spacing: -0.3px;
+        line-height: 1.8;
+        margin-top: 17px;
+        flex: 1;
+      }
+      &:hover {
+        border-color: $navy-light;
+      }
+    }
+  }
+
+}
+
+.search-wrapper {
+  margin-top: 45px;
+  margin-bottom: 70px;
+}
+
+.search-block {
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  border: 1px solid $card-border;
+  box-sizing: border-box;
+  height: 50px;
+
+  svg {
+    margin-right: 14px;
+    fill: $card-border;
+  }
+}
+
+.search-input {
+  height: 100%;
+  outline: none;
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+  padding: 0;
+
+  &::placeholder {
+    font-size: 18px;
+    color: $card-border;
+    line-height: 2.333;
   }
 }
