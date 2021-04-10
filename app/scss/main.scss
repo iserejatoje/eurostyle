@@ -331,12 +331,6 @@ svg {
   border: 1px solid transparentize($dark, .7);
   padding: 0 38px;
 
-  &:hover {
-    svg {
-      transform: rotate(90deg);
-    }
-  }
-
   svg {
     transition: transform 250ms ease;
     fill: $light-gray;
