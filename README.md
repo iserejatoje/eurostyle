@@ -5,6 +5,7 @@
 - [Проекты](https://iserejatoje.github.io/eurostyle/projects.html)
 - [Проект](https://iserejatoje.github.io/eurostyle/project.html)
 - [Новости](https://iserejatoje.github.io/eurostyle/news.html)
+- [Каталог_2](https://iserejatoje.github.io/eurostyle/catalog_2.html)
 - [Каталог](https://iserejatoje.github.io/eurostyle/catalog.html)
 - [Статья](https://iserejatoje.github.io/eurostyle/article.html)
 - [Сервис](https://iserejatoje.github.io/eurostyle/service.html)

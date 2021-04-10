@@ -276,6 +276,14 @@ $(document).ready(function () {
         return false;
     });
 
+    $('.search-input')
+        .on('focus', function() {
+            $(this).closest('.search-block').addClass('focus');
+        })
+        .on('blur', function() {
+            $(this).closest('.search-block').removeClass('focus');
+        });
+
     $('.tabs').on('click', 'a', function () {
         $(this).addClass('active').siblings().removeClass('active');
         $('.tab-content').find('.page').eq($(this).index()).show().siblings().hide();

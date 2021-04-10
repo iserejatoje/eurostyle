@@ -423,16 +423,15 @@ svg {
 }
 
 .product-content {
-  padding: 32px 40px 50px 40px;
   flex: 1;
   display: flex;
   flex-direction: column;
 
   @include respond(816px) {
-    padding: 32px 40px 50px 40px;
+    padding: 20px;
   }
   @include respond(0, 816px) {
-    padding: 22px;
+    padding: 15px;
   }
 }
 
@@ -457,6 +456,7 @@ svg {
   color: $dark;
   letter-spacing: .5px;
   line-height: 1.667;
+  text-decoration: none;
   margin-bottom: 10px;
   transition: color 250ms ease;
 }
@@ -469,7 +469,7 @@ svg {
   transition: border 250ms ease;
 
   @include respond(816px) {
-    min-height: 683px;
+    min-height: 426px;
   }
 
   &:hover {
@@ -484,11 +484,48 @@ svg {
 
 .product-grid {
   display: grid;
-  grid-gap: 30px;
-  margin-bottom: 60px;
+  grid-gap: 20px;
 
-  @include respond(816px) {
-    grid-template-columns: repeat(auto-fill, minmax(370px, auto));
+  .product-meta {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .brand-title {
+      margin-bottom: 7px;
+    }
+  }
+
+  .product-title {
+    font-size: 18px;
+    line-height: 1.389;
+    flex: 1;
+    margin-bottom: 20px;
+  }
+
+  .btn-small {
+    margin-bottom: 10px;
+    height: 40px;
+    max-width: 140px;
+  }
+
+  @include respond(1150px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include respond($mobile-breakpoint, 1150px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond(860px, $mobile-breakpoint) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include respond(570px, 860px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond(0, 570px) {
+    grid-template-columns: 1fr;
   }
 
   img {
@@ -1162,7 +1199,7 @@ section.detail {
       flex-direction: column;
       align-items: flex-start;
       .available {
-        margin-top: 8px;
+        margin-top: 6px;
       }
     }
     @include respond(850px) {
@@ -1198,7 +1235,7 @@ h1 {
     font-size: 62px;
   }
   @include respond(0, $mobile-breakpoint) {
-    font-size: 40px;
+    font-size: 32px;
   }
   line-height: 1.194;
   font-weight: 600;
@@ -2434,18 +2471,22 @@ picture img {
   img {
     @extend .border-block, .responsive-image;
   }
+
   ul {
     margin-bottom: 25px;
   }
+
   h2 {
     font-size: 21px;
     line-height: 1.667;
     font-weight: 600;
   }
+
   b,
   strong {
     font-weight: 600;
   }
+
   a {
     text-decoration: none;
     display: inline-block;
@@ -2453,6 +2494,7 @@ picture img {
     color: $navy-light;
     line-height: 1;
   }
+
   p {
     font-size: 18px;
     color: $dark;
@@ -2556,10 +2598,12 @@ li {
     justify-content: center;
     padding: 10px;
     box-sizing: border-box;
+
     svg {
       fill: $white;
     }
   }
+
   @include respond($mobile-breakpoint) {
     padding: 110px 0 110px 0;
   }
@@ -2682,6 +2726,7 @@ li {
   @include respond(0, $mobile-breakpoint) {
     padding: 30px 0 0 0;
   }
+
   .name {
     font-size: 18px;
     color: $light-gray;
@@ -2689,6 +2734,7 @@ li {
     letter-spacing: -0.5px;
     margin-bottom: 9px;
   }
+
   .title {
     margin-bottom: 24px;
   }
@@ -2710,16 +2756,19 @@ li {
     @include respond(0, $mobile-breakpoint) {
       padding: 25px 25px 30px;
     }
+
     &:hover {
       border: 1px solid $navy-light;
     }
   }
+
   .name {
     font-size: 16px;
     letter-spacing: -0.8px;
     line-height: 20px;
     color: $light-gray;
   }
+
   .title {
     font-size: 20px;
     line-height: 1.7;
@@ -2729,11 +2778,13 @@ li {
     text-decoration: none;
     color: $dark;
   }
+
   .text {
     letter-spacing: -0.3px;
     line-height: 1.9;
     flex: 1;
   }
+
   .btn-small {
     margin-top: 25px;
   }
@@ -2746,6 +2797,7 @@ li {
   @include respond(0, $mobile-breakpoint) {
     padding: 45px 0 55px 0;
   }
+
   .swiper-pagination {
     margin-top: 40px;
   }
@@ -2770,10 +2822,12 @@ li {
     @include respond(760px, 1080px) {
       grid-template-columns: 1fr 1fr;
     }
+
     .btn-small {
       margin-left: 9px;
       margin-top: 25px;
     }
+
     .card {
       background: $white;
       min-height: 427px;
@@ -2783,6 +2837,7 @@ li {
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
+
       .title {
         font-size: 28px;
         color: $dark;
@@ -2790,6 +2845,7 @@ li {
         line-height: 1.25;
         letter-spacing: -0.5px;
       }
+
       .text {
         font-size: 18px;
         letter-spacing: -0.3px;
@@ -2797,6 +2853,7 @@ li {
         margin-top: 17px;
         flex: 1;
       }
+
       &:hover {
         border-color: $navy-light;
       }
@@ -2806,15 +2863,30 @@ li {
 }
 
 .search-wrapper {
-  margin-top: 45px;
-  margin-bottom: 70px;
+  @include respond($mobile-breakpoint) {
+    margin-top: 45px;
+    margin-bottom: 65px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    margin-top: 25px;
+    margin-bottom: 35px;
+  }
 }
 
 .search-block {
   padding: 0 25px;
   display: flex;
   align-items: center;
-  border: 1px solid $card-border;
+  transition: border-color 200ms ease;
+
+  &:not(.focus) {
+    border: 1px solid $card-border;
+  }
+
+  &.focus {
+    border: 1px solid $navy-light;
+  }
+
   box-sizing: border-box;
   height: 50px;
 
@@ -2836,5 +2908,82 @@ li {
     font-size: 18px;
     color: $card-border;
     line-height: 2.333;
+  }
+}
+
+.catalog-2_wrapper {
+  @include respond($mobile-breakpoint) {
+    padding: 80px 0 120px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 50px 0;
+  }
+  background: $catalog-background;
+}
+
+.catalog-2_inner {
+
+  @include respond($mobile-breakpoint) {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .product-grid {
+
+    @include respond($mobile-breakpoint) {
+      margin-bottom: 60px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      margin-bottom: 30px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      margin-top: 30px;
+    }
+  }
+}
+
+.catalog-categories {
+  @include respond($mobile-breakpoint) {
+    max-width: 410px;
+    width: 100%;
+    margin-right: 30px;
+  }
+
+  border: 1px solid $navy-light;
+  box-sizing: border-box;
+
+  .catalog-category {
+    display: flex;
+    align-items: center;
+    @include respond($mobile-breakpoint) {
+      padding: 17px 30px;
+      font-size: 22px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      padding: 12px 20px;
+      font-size: 18px;
+    }
+    text-decoration: none;
+    color: $light-gray;
+    font-weight: 600;
+    transition: background 200ms ease, border 200ms ease, color 200ms ease;
+    line-height: 1.227;
+
+    &:not(:last-child) {
+      @include respond($mobile-breakpoint) {
+        margin-bottom: 9px;
+      }
+    }
+
+    &.active {
+      background: $navy-light;
+      color: $white;
+    }
+
+    &:hover {
+      background: $category-light;
+      color: $navy;
+      border-right: 2px solid $navy-light;
+    }
   }
 }
