@@ -3949,7 +3949,7 @@ li {
     .catalog-categories .catalog-category.active {
       background: #87b0dd;
       color: #fff; }
-    .catalog-categories .catalog-category:hover {
+    .catalog-categories .catalog-category:hover:not(.active) {
       background: #dee9f6;
       color: #37597F;
       border-right: 2px solid #87b0dd; }
