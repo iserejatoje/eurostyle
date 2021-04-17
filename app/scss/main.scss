@@ -32,11 +32,17 @@ body {
   }
 }
 
+.catalog-empty {
+  font-size: 18px;
+  margin-top: 55px;
+  color: $dark;
+}
+
 .menu {
   position: fixed;
   @include respond($mobile-breakpoint) {
     padding: 60px 0;
-    top: 109px;
+    top: 128px;
   }
   @include respond(0, $mobile-breakpoint) {
     padding: 30px 0;
@@ -186,10 +192,12 @@ body {
 }
 
 .container {
-  max-width: 1290px;
+  max-width: 1320px;
   padding: 0 15px;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+  box-sizing: border-box;
 
   &.responsive {
     box-sizing: border-box;
@@ -484,7 +492,6 @@ svg {
 
 .product-grid {
   display: grid;
-  grid-gap: 20px;
 
   .product-meta {
     flex-direction: column;
@@ -508,24 +515,49 @@ svg {
     max-width: 140px;
   }
 
-  @include respond(1150px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  &.columns-4 {
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
+    margin-top: 55px;
+    margin-bottom: 60px;
+    @include respond(1150px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
 
-  @include respond($mobile-breakpoint, 1150px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    @include respond($mobile-breakpoint, 1150px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-  @include respond(860px, $mobile-breakpoint) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    @include respond(600px, $mobile-breakpoint) {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-  @include respond(570px, 860px) {
-    grid-template-columns: repeat(2, 1fr);
+    @include respond(0, 600px) {
+      grid-template-columns: 1fr;
+    }
   }
+  &.columns-3 {
+    grid-gap: 20px;
+    @include respond(1150px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-  @include respond(0, 570px) {
-    grid-template-columns: 1fr;
+    @include respond($mobile-breakpoint, 1150px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(860px, $mobile-breakpoint) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond(570px, 860px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(0, 570px) {
+      grid-template-columns: 1fr;
+    }
+
   }
 
   img {
@@ -1254,6 +1286,8 @@ h1 {
 
 .breadcrumbs {
   font-size: 15px;
+  display: inline-flex;
+  flex-wrap: wrap;
 
   @include respond($mobile-breakpoint) {
     &:not(.breadcrumbs-light) {
@@ -2063,10 +2097,13 @@ picture img {
 
   .app-inner {
     flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
   }
 }
 
 .news-wrapper {
+  flex: 1;
   background: $catalog-background;
   @include respond($mobile-breakpoint) {
     padding: 70px 0 140px 0;
@@ -2838,12 +2875,22 @@ li {
       display: flex;
       flex-direction: column;
 
+      a {
+        text-decoration: none;
+      }
+
       .title {
         font-size: 28px;
         color: $dark;
         font-weight: bold;
+        text-decoration: none;
         line-height: 1.25;
         letter-spacing: -0.5px;
+        transition: color 230ms ease;
+
+        &:hover {
+          color: $navy;
+        }
       }
 
       .text {
@@ -2852,6 +2899,10 @@ li {
         line-height: 1.8;
         margin-top: 17px;
         flex: 1;
+
+        a {
+          color: $dark;
+        }
       }
 
       &:hover {
@@ -2860,6 +2911,10 @@ li {
     }
   }
 
+}
+
+.products-wrapper {
+  width: 100%;
 }
 
 .search-wrapper {
@@ -3074,4 +3129,54 @@ li {
     //max-width: 849px;
     //margin: 0 auto;
   }
+}
+
+.product-grid.inline {
+  display: block !important;
+}
+
+@media (max-width: 1000px) {
+  section.slider .slider-item .container {
+    padding: 0 50px;
+  }
+}
+
+.slider-control {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  max-width: 1380px;
+  width: 100%;
+  z-index: 10;
+  margin: auto;
+  outline: 0;
+  cursor: pointer;
+
+  .prev,
+  .next {
+    z-index: 10;
+    height: 30px;
+    outline: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    cursor: pointer;
+  }
+
+  svg {
+    display: block;
+  }
+
+  .prev {
+    left: 0;
+    transform: rotate(180deg);
+  }
+
+  .next {
+    right: 0;
+  }
+
 }
